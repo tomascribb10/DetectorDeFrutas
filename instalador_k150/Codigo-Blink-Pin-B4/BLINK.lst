@@ -1,0 +1,99 @@
+CCS PCM C Compiler, Version 4.104, 5967               06-mar.-20 12:15
+
+               Filename: C:\Users\CDMX Electronica\Desktop\BLINK-PIC\BLINK.lst
+
+               ROM used: 61 words (3%)
+                         Largest free fragment is 1987
+               RAM used: 6 (3%) at main() level
+                         7 (3%) worst case
+               Stack:    1 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   019
+0003:  NOP
+.................... #include <16F628A.h> //Se define el Pic a utilizar 
+.................... //////// Standard Header file for the PIC16F628A device //////////////// 
+.................... #device PIC16F628A 
+.................... #list 
+....................  
+.................... #fuses XT,NOWDT,NOPROTECT //Ordenes para el programador 
+.................... #use delay (clock=4M) //Frecuencia del oscilador 
+0004:  MOVLW  22
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+.................... #use standard_io(b) //Manejo del puerto B 
+.................... /******************Se declaran los puertos a utilizar***************/ 
+.................... #define Led_B4 PIN_B4 
+.................... /******************Programa**********************/ 
+.................... void main(){ 
+0019:  CLRF   04
+001A:  BCF    03.7
+001B:  MOVLW  1F
+001C:  ANDWF  03,F
+001D:  MOVLW  07
+001E:  MOVWF  1F
+.................... //Configuración de Puertos// 
+....................    set_tris_b(0b00000000);  // Todos los pines como salidas. 
+001F:  MOVLW  00
+0020:  TRIS   6
+.................... //Inicialización de Periféricos// 
+....................    output_b(0b00000000);  // Inicializa los pines Apagados 
+0021:  BSF    03.5
+0022:  CLRF   06
+0023:  BCF    03.5
+0024:  CLRF   06
+....................  
+....................    while(true){      // Ciclo infinito  
+....................       output_high(Led_B4);   
+0025:  BSF    03.5
+0026:  BCF    06.4
+0027:  BCF    03.5
+0028:  BSF    06.4
+....................       delay_ms(1000); 
+0029:  MOVLW  04
+002A:  MOVWF  21
+002B:  MOVLW  FA
+002C:  MOVWF  22
+002D:  CALL   004
+002E:  DECFSZ 21,F
+002F:  GOTO   02B
+....................       output_low(Led_B4); 
+0030:  BSF    03.5
+0031:  BCF    06.4
+0032:  BCF    03.5
+0033:  BCF    06.4
+....................       delay_ms(1000); 
+0034:  MOVLW  04
+0035:  MOVWF  21
+0036:  MOVLW  FA
+0037:  MOVWF  22
+0038:  CALL   004
+0039:  DECFSZ 21,F
+003A:  GOTO   036
+.................... } 
+003B:  GOTO   025
+.................... } 
+003C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   XT NOWDT PUT NOPROTECT BROWNOUT MCLR NOLVP NOCPD

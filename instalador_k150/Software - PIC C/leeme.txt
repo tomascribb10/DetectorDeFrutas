@@ -1,0 +1,10 @@
+
+PCWHD 4.104 - Subido por marco recargado
+
+1. Primero instala pcwhdupd.exe
+2. Despues instalas ideutilsupd.exe
+3. finalmente copias todos los archivos *.crg en el directorio
+   de instalacion.
+4. A disfrutar
+
+si deseas mas software no olvides visitar www.mexico.inovando.com.mx

@@ -1,0 +1,221 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\itoa.c
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+"17
+[v _utoa utoa `(*.4uc  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"41 C:\Users\tomas\MPLABXProjects\USARTRX.X\main.c
+[v _init init `(v  1 e 1 0 ]
+"55
+[v _main main `(v  1 e 1 0 ]
+"15 C:\Users\tomas\MPLABXProjects\USARTRX.X\UART.c
+[v _UARTInit UARTInit `(v  1 e 1 0 ]
+"46
+[v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
+"56
+[v _UARTSendString UARTSendString `(v  1 e 1 0 ]
+"67
+[v _UARTDataReady UARTDataReady `(uc  1 e 1 0 ]
+"75
+[v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
+"87
+[v _UARTReadString UARTReadString `(uc  1 e 1 0 ]
+[s S94 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"406 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES103  1 e 1 @12 ]
+[s S44 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"704
+[s S53 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADDEN 1 0 :1:3 
+]
+[u S56 . 1 `S44 1 . 1 0 `S53 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES56  1 e 1 @24 ]
+"754
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"761
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+[s S72 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"987
+[u S81 . 1 `S72 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES81  1 e 1 @134 ]
+[s S23 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"1162
+[u S32 . 1 `S23 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES32  1 e 1 @152 ]
+"1202
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"55 C:\Users\tomas\MPLABXProjects\USARTRX.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"56
+[v main@readBuf readBuf `[16]*.1uc  1 a 16 12 ]
+"57
+[v main@tmpBuf tmpBuf `[8]*.1uc  1 a 8 28 ]
+"58
+[v main@nRead nRead `i  1 a 2 36 ]
+"77
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\itoa.c
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+{
+[v itoa@buf buf `*.4uc  1 a 1 wreg ]
+[v itoa@buf buf `*.4uc  1 a 1 wreg ]
+[v itoa@val val `i  1 p 2 4 ]
+[v itoa@base base `i  1 p 2 6 ]
+[v itoa@buf buf `*.4uc  1 a 1 8 ]
+"14
+} 0
+"17
+[v _utoa utoa `(*.4uc  1 e 1 0 ]
+{
+[v utoa@buf buf `*.4uc  1 a 1 wreg ]
+"19
+[v utoa@v v `ui  1 a 2 0 ]
+"20
+[v utoa@c c `uc  1 a 1 2 ]
+"17
+[v utoa@buf buf `*.4uc  1 a 1 wreg ]
+[v utoa@val val `ui  1 p 2 8 ]
+[v utoa@base base `i  1 p 2 10 ]
+"22
+[v utoa@buf buf `*.4uc  1 a 1 3 ]
+"37
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"41 C:\Users\tomas\MPLABXProjects\USARTRX.X\main.c
+[v _init init `(v  1 e 1 0 ]
+{
+"53
+} 0
+"15 C:\Users\tomas\MPLABXProjects\USARTRX.X\UART.c
+[v _UARTInit UARTInit `(v  1 e 1 0 ]
+{
+[v UARTInit@baud_rate baud_rate `DCul  1 p 4 0 ]
+[v UARTInit@BRGH BRGH `DCuc  1 p 1 4 ]
+"40
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"56 C:\Users\tomas\MPLABXProjects\USARTRX.X\UART.c
+[v _UARTSendString UARTSendString `(v  1 e 1 0 ]
+{
+"57
+[v UARTSendString@i i `i  1 a 2 7 ]
+"56
+[v UARTSendString@str str `*.26DCuc  1 p 2 1 ]
+[v UARTSendString@max_length max_length `DCuc  1 p 1 3 ]
+"61
+} 0
+"46
+[v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
+{
+[v UARTSendChar@c c `DCuc  1 a 1 wreg ]
+[v UARTSendChar@c c `DCuc  1 a 1 wreg ]
+[v UARTSendChar@c c `DCuc  1 a 1 0 ]
+"49
+} 0
+"87
+[v _UARTReadString UARTReadString `(uc  1 e 1 0 ]
+{
+[v UARTReadString@buf buf `*.4uc  1 a 1 wreg ]
+"88
+[v UARTReadString@i i `uc  1 a 1 6 ]
+"89
+[v UARTReadString@tmp tmp `uc  1 a 1 5 ]
+"87
+[v UARTReadString@buf buf `*.4uc  1 a 1 wreg ]
+[v UARTReadString@max_length max_length `uc  1 p 1 1 ]
+[v UARTReadString@buf buf `*.4uc  1 a 1 4 ]
+"102
+} 0
+"75
+[v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
+{
+"78
+} 0
+"67
+[v _UARTDataReady UARTDataReady `(uc  1 e 1 0 ]
+{
+"69
+} 0
