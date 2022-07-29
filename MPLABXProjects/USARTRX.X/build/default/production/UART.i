@@ -1199,6 +1199,7 @@ void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
     TXSTAbits.TX9 = 0;
     TXSTAbits.TXEN = 1;
     TXSTAbits.SYNC = 0;
+    TXSTAbits.TRMT = 1;
 
 
     RCSTAbits.SPEN = 1;
@@ -1208,8 +1209,8 @@ void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
     RCSTAbits.OERR = 0;
 
 
-    TRISBbits.TRISB6 = 1;
-    TRISBbits.TRISB7 = 0;
+    TRISBbits.TRISB1 = 1;
+    TRISBbits.TRISB2 = 1;
 }
 
 
@@ -1249,7 +1250,7 @@ char UARTReadChar() {
     while (!UARTDataReady());
     return RCREG;
 }
-# 87 "UART.c"
+# 88 "UART.c"
 uint8_t UARTReadString(char *buf, uint8_t max_length) {
     uint8_t i = 0;
     char tmp = 1;

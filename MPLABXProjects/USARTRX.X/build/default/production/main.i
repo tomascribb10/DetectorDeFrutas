@@ -1290,8 +1290,21 @@ uint8_t UARTReadString(char *buf, uint8_t max_length);
 
 
 void init() {
-# 50 "main.c"
+
+
+
+
+
+
+
+    CMCONbits.CM0 = 1;
+    CMCONbits.CM1 = 1;
+    CMCONbits.CM2 = 1;
+
+
     TRISBbits.TRISB1 = 0;
+    TRISA = 0x00;
+    PORTA = 0;
 
     UARTInit(9600, 1);
 }
@@ -1300,9 +1313,14 @@ void main(void) {
     char* readBuf[16];
     char* tmpBuf[8];
     int nRead = 0;
+    char letra;
     init();
-
+    PORTAbits.RA0 = 1;
+    PORTAbits.RA1 = 1;
+    PORTAbits.RA2 = 1;
+    PORTA = 0b00000111;
     while (1) {
+
 
         UARTSendString("> \0", 16);
 
@@ -1315,6 +1333,35 @@ void main(void) {
 
         UARTSendString(readBuf, nRead);
         UARTSendString("\n\r\0", 16);
+# 94 "main.c"
+        letra = readBuf[0];
+
+        switch (letra){
+            case 'a':
+                UARTSendString("\n\rPrendiendo Led \0", 16);
+                PORTAbits.RA0 = 1;
+                break;
+            case 'b':
+                UARTSendString("\n\rApagando Led \0", 16);
+                PORTAbits.RA0 = 0;
+                break;
+            case 'c':
+                UARTSendString("\n\rPrendiendo Led \0", 16);
+                PORTAbits.RA1 = 1;
+                break;
+            case 'd':
+                UARTSendString("\n\rApagando Led \0", 16);
+                PORTAbits.RA1 = 0;
+                break;
+            case 'e':
+                UARTSendString("\n\rPrendiendo Led \0", 16);
+                PORTAbits.RA2 = 1;
+                break;
+            case 'f':
+                UARTSendString("\n\rApagando Led \0", 16);
+                PORTAbits.RA2 = 0;
+                break;
+        }
     }
 
     return;

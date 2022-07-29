@@ -210,177 +210,180 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28
 [; ;UART.c: 28:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"31
-[; ;UART.c: 31:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"29
+[; ;UART.c: 29:     TXSTAbits.TRMT = 1;
+[e = . . _TXSTAbits 0 1 -> -> 1 `i `uc ]
 "32
-[; ;UART.c: 32:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;UART.c: 32:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "33
-[; ;UART.c: 33:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;UART.c: 33:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
 "34
-[; ;UART.c: 34:     RCSTAbits.FERR = 0;
-[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;UART.c: 34:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "35
-[; ;UART.c: 35:     RCSTAbits.OERR = 0;
+[; ;UART.c: 35:     RCSTAbits.FERR = 0;
+[e = . . _RCSTAbits 0 2 -> -> 0 `i `uc ]
+"36
+[; ;UART.c: 36:     RCSTAbits.OERR = 0;
 [e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
-"38
-[; ;UART.c: 38:     TRISBbits.TRISB6 = 1;
-[e = . . _TRISBbits 0 6 -> -> 1 `i `uc ]
 "39
-[; ;UART.c: 39:     TRISBbits.TRISB7 = 0;
-[e = . . _TRISBbits 0 7 -> -> 0 `i `uc ]
+[; ;UART.c: 39:     TRISBbits.TRISB1 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
 "40
-[; ;UART.c: 40: }
+[; ;UART.c: 40:     TRISBbits.TRISB2 = 1;
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+"41
+[; ;UART.c: 41: }
 [e :UE 51 ]
 }
-"46
-[; ;UART.c: 46: void UARTSendChar(const char c) {
+"47
+[; ;UART.c: 47: void UARTSendChar(const char c) {
 [v _UARTSendChar `(v ~T0 @X0 1 ef1`Cuc ]
 {
 [e :U _UARTSendChar ]
 [v _c `Cuc ~T0 @X0 1 r1 ]
 [f ]
-"47
-[; ;UART.c: 47:     while (TXSTAbits.TRMT == 0);
+"48
+[; ;UART.c: 48:     while (TXSTAbits.TRMT == 0);
 [e $U 55  ]
 [e :U 56 ]
 [e :U 55 ]
 [e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 56  ]
 [e :U 57 ]
-"48
-[; ;UART.c: 48:     TXREG = c;
-[e = _TXREG -> _c `uc ]
 "49
-[; ;UART.c: 49: }
+[; ;UART.c: 49:     TXREG = c;
+[e = _TXREG -> _c `uc ]
+"50
+[; ;UART.c: 50: }
 [e :UE 54 ]
 }
-"56
-[; ;UART.c: 56: void UARTSendString(const char* str, const uint8_t max_length) {
+"57
+[; ;UART.c: 57: void UARTSendString(const char* str, const uint8_t max_length) {
 [v _UARTSendString `(v ~T0 @X0 1 ef2`*Cuc`Cuc ]
 {
 [e :U _UARTSendString ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [v _max_length `Cuc ~T0 @X0 1 r2 ]
 [f ]
-"57
-[; ;UART.c: 57:     int i = 0;
+"58
+[; ;UART.c: 58:     int i = 0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"58
-[; ;UART.c: 58:     for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+"59
+[; ;UART.c: 59:     for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
 {
 [e = _i -> 0 `i ]
 [e $U 62  ]
 [e :U 59 ]
 {
-"59
-[; ;UART.c: 59:         UARTSendChar(str[i]);
-[e ( _UARTSendChar (1 *U + _str * -> _i `x -> -> # *U _str `i `x ]
 "60
-[; ;UART.c: 60:     }
+[; ;UART.c: 60:         UARTSendChar(str[i]);
+[e ( _UARTSendChar (1 *U + _str * -> _i `x -> -> # *U _str `i `x ]
+"61
+[; ;UART.c: 61:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 62 ]
 [e $ && < _i -> _max_length `i != -> *U + _str * -> _i `x -> -> # *U _str `i `x `ui -> 0 `ui 59  ]
 [e :U 60 ]
 }
-"61
-[; ;UART.c: 61: }
+"62
+[; ;UART.c: 62: }
 [e :UE 58 ]
 }
-"67
-[; ;UART.c: 67: uint8_t UARTDataReady() {
+"68
+[; ;UART.c: 68: uint8_t UARTDataReady() {
 [v _UARTDataReady `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UARTDataReady ]
 [f ]
-"68
-[; ;UART.c: 68:     return PIR1bits.RCIF;
+"69
+[; ;UART.c: 69:     return PIR1bits.RCIF;
 [e ) . . _PIR1bits 0 5 ]
 [e $UE 63  ]
-"69
-[; ;UART.c: 69: }
+"70
+[; ;UART.c: 70: }
 [e :UE 63 ]
 }
-"75
-[; ;UART.c: 75: char UARTReadChar() {
+"76
+[; ;UART.c: 76: char UARTReadChar() {
 [v _UARTReadChar `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UARTReadChar ]
 [f ]
-"76
-[; ;UART.c: 76:     while (!UARTDataReady());
+"77
+[; ;UART.c: 77:     while (!UARTDataReady());
 [e $U 65  ]
 [e :U 66 ]
 [e :U 65 ]
 [e $ ! != -> ( _UARTDataReady ..  `i -> 0 `i 66  ]
 [e :U 67 ]
-"77
-[; ;UART.c: 77:     return RCREG;
+"78
+[; ;UART.c: 78:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 64  ]
-"78
-[; ;UART.c: 78: }
+"79
+[; ;UART.c: 79: }
 [e :UE 64 ]
 }
-"87
-[; ;UART.c: 87: uint8_t UARTReadString(char *buf, uint8_t max_length) {
+"88
+[; ;UART.c: 88: uint8_t UARTReadString(char *buf, uint8_t max_length) {
 [v _UARTReadString `(uc ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _UARTReadString ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [v _max_length `uc ~T0 @X0 1 r2 ]
 [f ]
-"88
-[; ;UART.c: 88:     uint8_t i = 0;
+"89
+[; ;UART.c: 89:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"89
-[; ;UART.c: 89:     char tmp = 1;
+"90
+[; ;UART.c: 90:     char tmp = 1;
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp -> -> 1 `i `uc ]
-"90
-[; ;UART.c: 90:     for (i=0 ; i<max_length-1 ; i++) {
+"91
+[; ;UART.c: 91:     for (i=0 ; i<max_length-1 ; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 72  ]
 [e :U 69 ]
 {
-"91
-[; ;UART.c: 91:         tmp = UARTReadChar();
+"92
+[; ;UART.c: 92:         tmp = UARTReadChar();
 [e = _tmp ( _UARTReadChar ..  ]
-"93
-[; ;UART.c: 93:         if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
+"94
+[; ;UART.c: 94:         if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
 [e $ ! || || == -> _tmp `ui -> 0 `ui == -> _tmp `ui -> 10 `ui == -> _tmp `ui -> 13 `ui 73  ]
 {
-"94
-[; ;UART.c: 94:             break;
-[e $U 70  ]
 "95
-[; ;UART.c: 95:         }
+[; ;UART.c: 95:             break;
+[e $U 70  ]
+"96
+[; ;UART.c: 96:         }
 }
 [e :U 73 ]
-"96
-[; ;UART.c: 96:         buf[i] = tmp;
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
 "97
-[; ;UART.c: 97:     }
+[; ;UART.c: 97:         buf[i] = tmp;
+[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
+"98
+[; ;UART.c: 98:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 72 ]
 [e $ < -> _i `i - -> _max_length `i -> 1 `i 69  ]
 [e :U 70 ]
 }
-"99
-[; ;UART.c: 99:     buf[i+1] = '\0';
+"100
+[; ;UART.c: 100:     buf[i+1] = '\0';
 [e = *U + _buf * -> + -> _i `i -> 1 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"101
-[; ;UART.c: 101:     return i;
+"102
+[; ;UART.c: 102:     return i;
 [e ) _i ]
 [e $UE 68  ]
-"102
-[; ;UART.c: 102: }
+"103
+[; ;UART.c: 103: }
 [e :UE 68 ]
 }

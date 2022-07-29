@@ -26,7 +26,6 @@ void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
     TXSTAbits.TX9 = 0;      // 8-bit transmission
     TXSTAbits.TXEN = 1;     // Enable transmission
     TXSTAbits.SYNC = 0;     // Asynchronous mode
-    //TXSTAbits.BRGH = 1;     // modo alta velocidad
     TXSTAbits.TRMT = 1;     // borrar bandera de estado
     
     // RCSTA register
@@ -38,7 +37,7 @@ void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
     
     // Set up direction of RX/TX pins
     UART_TRIS_RX = 1;
-    UART_TRIS_TX = 0;
+    UART_TRIS_TX = 1;
 }
 
 /**

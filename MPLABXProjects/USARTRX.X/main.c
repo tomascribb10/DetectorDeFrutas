@@ -46,8 +46,14 @@ void init() {
     
     //ANSEL = 0x00;               // Set all I/O to digital I/O
     
+    CMCONbits.CM0 = 1;
+    CMCONbits.CM1 = 1;
+    CMCONbits.CM2 = 1;
+    
     // Ports config
     TRISBbits.TRISB1 = 0;
+    TRISA = 0x00;
+    PORTA = 0;
     
     UARTInit(9600, 1);
 }
@@ -56,9 +62,14 @@ void main(void) {
     char* readBuf[MAX_LENGTH_UART];
     char* tmpBuf[8];
     int nRead = 0;
+    char letra;
     init();
-    
+    PORTAbits.RA0 = 1;
+    PORTAbits.RA1 = 1;
+    PORTAbits.RA2 = 1;
+    PORTA = 0b00000111;
     while (1) {
+        
         // Send prompt
         UARTSendString("> \0", MAX_LENGTH_UART);
         // Read response
@@ -71,6 +82,43 @@ void main(void) {
         // Send echo of response.
         UARTSendString(readBuf, nRead);
         UARTSendString("\n\r\0", MAX_LENGTH_UART);
+        
+        //if (readBuf[0] == 'a' ){
+        //    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+        //    PORTAbits.RA0 = 1;
+        //}
+        //if (readBuf[0] == 'b' ){
+        //    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+        //    PORTAbits.RA0 = 0;
+        //}
+        letra = readBuf[0];
+                
+        switch (letra){
+            case 'a': 
+                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA0 = 1;
+                break;
+            case 'b':
+                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA0 = 0;                
+                break;
+            case 'c':    
+                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA1 = 1;
+                break;
+            case 'd':
+                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA1 = 0;
+                break;
+            case 'e':    
+                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA2 = 1;  
+                break;      
+            case 'f':
+                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                PORTAbits.RA2 = 0;
+                break;             
+        } 
     }
     
     return;
