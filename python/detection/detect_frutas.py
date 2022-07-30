@@ -1,10 +1,10 @@
-from ast import If
+#from ast import If
 import cv2
 import time
 import numpy as np
 
 import serial
-import time
+
 
 # load the COCO class names
 with open('./model/object_detection_classes_coco.txt', 'r') as f:

@@ -8,15 +8,30 @@ import time
 import serial.tools.list_ports as port_list
 serial_device = "COM4"
 
+
 ports = list(port_list.comports())
 for p in ports:
     if p.device == serial_device:
         serialPort = serial.Serial(
-            port="COM4", baudrate=9600, bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE
+            port=serial_device, baudrate=9600, bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE
         )
         serialPort.flushInput() #flush input buffer, discarding all its contents
         serialPort.flushOutput()#flush output buffer, aborting current output 
                         #and discard all that is in buffer
+
+for x in range(1):
+    serialPort.write(b"a\r\n")
+    time.sleep(1)
+    serialPort.write(b"b\r\n")
+    time.sleep(1)
+    serialPort.write(b"c\r\n")
+    time.sleep(1)
+    serialPort.write(b"d\r\n")
+    time.sleep(1)
+    serialPort.write(b"e\r\n")
+    time.sleep(1)
+    serialPort.write(b"f\r\n")
+    time.sleep(1)
 
 # load the COCO class names
 with open('../model/object_detection_classes_coco.txt', 'r') as f:
@@ -77,7 +92,7 @@ while True:
                 
                 # map the class id to the class 
                 class_name = class_names[int(class_id)-1]
-                if class_name == 'banana':
+                if class_name == 'cup':
                     banana_on = 5
                 if class_name == 'apple':
                     apple_on = 5
@@ -100,45 +115,62 @@ while True:
         
         #Manejo led banana          
         if banana_on > 0 and led_prendido1 == False:
-            led_prendido1 = True           
+            led_prendido1 = True
+            if serialPort:
+                serialPort.write(b"a\r\n")
+                time.sleep(.5)         
         elif banana_on == 0 and led_prendido1 == True:
             led_prendido1 = False
+            if serialPort:
+                serialPort.write(b"b\r\n")
+                time.sleep(.5)
         else: 
             banana_on = banana_on - 1
         if led_prendido1 == True:
             cv2.circle(img=image, center = (25,60), radius =12, color =(0,255,255), thickness=-1)
-            #serialPort.write(b"a\r\n")
+            
         else:
             cv2.circle(img=image, center = (25,60), radius =12, color =(0,255,255), thickness=2)
-            #serialPort.write(b"a\r\n")
+            
+                
 
         #Manejo led manzana         
         if apple_on > 0 and led_prendido2 == False:
-            led_prendido2 = True           
+            led_prendido2 = True    
+            if serialPort:
+                serialPort.write(b"c\r\n")
+                time.sleep(.5)       
         elif apple_on == 0 and led_prendido2 == True:
             led_prendido2 = False
+            if serialPort:
+                serialPort.write(b"d\r\n")
+                time.sleep(.5)
         else: 
             apple_on = apple_on - 1
         if led_prendido2 == True:
             cv2.circle(img=image, center = (55,60), radius =12, color =(0,0,255), thickness=-1)
-            #serialPort.write(b"c\r\n")
         else:
             cv2.circle(img=image, center = (55,60), radius =12, color =(0,0,255), thickness=2)
-            #serialPort.write(b"d\r\n")
+            
 
         #Manejo led naranja         
         if orange_on > 0 and led_prendido3 == False:
-            led_prendido3 = True           
+            led_prendido3 = True 
+            if serialPort:
+                serialPort.write(b"e\r\n")
+                time.sleep(.5)          
         elif orange_on == 0 and led_prendido3 == True:
             led_prendido3 = False
+            if serialPort:
+                serialPort.write(b"f\r\n")
+                time.sleep(.5)
         else: 
             orange_on = orange_on - 1
         if led_prendido3 == True:
             cv2.circle(img=image, center = (85,60), radius =12, color =(26, 127, 239), thickness=-1)
-            #serialPort.write(b"e\r\n")
         else:
             cv2.circle(img=image, center = (85,60), radius =12, color =(26, 127, 239), thickness=2)
-            #serialPort.write(b"f\r\n")
+            
 
         cv2.imshow('image', image)
         #out.write(image)
