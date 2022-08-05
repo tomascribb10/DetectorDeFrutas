@@ -49,12 +49,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "122 ./UART.h
 [; ;./UART.h: 122: void UARTSendString(const char* str, const uint8_t max_length);
 [v _UARTSendString `(v ~T0 @X0 0 ef2`*Cuc`Cuc ]
-"142
-[; ;./UART.h: 142: uint8_t UARTReadString(char *buf, uint8_t max_length);
-[v _UARTReadString `(uc ~T0 @X0 0 ef2`*uc`uc ]
-"113 C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
-[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
+"128
+[; ;./UART.h: 128: short UARTDataReady();
+[v _UARTDataReady `(s ~T0 @X0 0 e? ]
+"134
+[; ;./UART.h: 134: char UARTReadChar();
+[v _UARTReadChar `(uc ~T0 @X0 0 e? ]
 "18 main.c
 [p x FOSC  =  INTOSCIO   ]
 "19
@@ -240,154 +240,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 67:     PORTAbits.RA0 = 1;
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
 "68
-[; ;main.c: 68:     PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 68:     PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
 "69
 [; ;main.c: 69:     PORTAbits.RA2 = 1;
 [e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "70
-[; ;main.c: 70:     PORTA = 0b00000111;
-[e = _PORTA -> -> 7 `i `uc ]
-"71
-[; ;main.c: 71:     while (1) {
+[; ;main.c: 70:     UARTSendString("TOM> \0", 16);
+[e ( _UARTSendString (2 , :s 1C -> -> 16 `i `uc ]
+"72
+[; ;main.c: 72:     while (1) {
 [e :U 58 ]
 {
-"74
-[; ;main.c: 74:         UARTSendString("> \0", 16);
-[e ( _UARTSendString (2 , :s 1C -> -> 16 `i `uc ]
-"76
-[; ;main.c: 76:         nRead = UARTReadString(readBuf, 16);
-[e = _nRead -> ( _UARTReadString (2 , -> &U _readBuf `*uc -> -> 16 `i `uc `i ]
-"78
-[; ;main.c: 78:         itoa(tmpBuf, nRead, 10);
-[e ( _itoa (3 , , -> &U _tmpBuf `*uc _nRead -> 10 `i ]
-"79
-[; ;main.c: 79:         UARTSendString("\n\rReceived \0", 16);
-[e ( _UARTSendString (2 , :s 2C -> -> 16 `i `uc ]
-"80
-[; ;main.c: 80:         UARTSendString(tmpBuf, 16);
-[e ( _UARTSendString (2 , -> &U _tmpBuf `*Cuc -> -> 16 `i `uc ]
-"81
-[; ;main.c: 81:         UARTSendString(" bytes: \0", 16);
-[e ( _UARTSendString (2 , :s 3C -> -> 16 `i `uc ]
-"83
-[; ;main.c: 83:         UARTSendString(readBuf, nRead);
-[e ( _UARTSendString (2 , -> &U _readBuf `*Cuc -> _nRead `uc ]
-"84
-[; ;main.c: 84:         UARTSendString("\n\r\0", 16);
-[e ( _UARTSendString (2 , :s 4C -> -> 16 `i `uc ]
-"94
-[; ;main.c: 94:         letra = readBuf[0];
-[e = _letra -> *U + &U _readBuf * -> -> -> 0 `i `ui `ux -> -> # *U &U _readBuf `ui `ux `uc ]
-"96
-[; ;main.c: 96:         switch (letra){
-[e $U 61  ]
+"73
+[; ;main.c: 73:         if(UARTDataReady() > 0){
+[e $ ! > -> ( _UARTDataReady ..  `i -> 0 `i 60  ]
 {
-"97
-[; ;main.c: 97:             case 'a':
-[e :U 62 ]
-"98
-[; ;main.c: 98:                 UARTSendString("\n\rPrendiendo Led \0", 16);
-[e ( _UARTSendString (2 , :s 5C -> -> 16 `i `uc ]
-"99
-[; ;main.c: 99:                 PORTAbits.RA0 = 1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"100
-[; ;main.c: 100:                 break;
-[e $U 60  ]
-"101
-[; ;main.c: 101:             case 'b':
+"88
+[; ;main.c: 88:             letra = UARTReadChar();
+[e = _letra ( _UARTReadChar ..  ]
+"90
+[; ;main.c: 90:             switch (letra){
+[e $U 62  ]
+{
+"91
+[; ;main.c: 91:                 case 'a':
 [e :U 63 ]
-"102
-[; ;main.c: 102:                 UARTSendString("\n\rApagando Led \0", 16);
-[e ( _UARTSendString (2 , :s 6C -> -> 16 `i `uc ]
-"103
-[; ;main.c: 103:                 PORTAbits.RA0 = 0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:                 break;
-[e $U 60  ]
-"105
-[; ;main.c: 105:             case 'c':
+"92
+[; ;main.c: 92:                     UARTSendString("\n\rPrendiendo Led \0", 16);
+[e ( _UARTSendString (2 , :s 2C -> -> 16 `i `uc ]
+"93
+[; ;main.c: 93:                     PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"94
+[; ;main.c: 94:                     break;
+[e $U 61  ]
+"95
+[; ;main.c: 95:                 case 'b':
 [e :U 64 ]
-"106
-[; ;main.c: 106:                 UARTSendString("\n\rPrendiendo Led \0", 16);
-[e ( _UARTSendString (2 , :s 7C -> -> 16 `i `uc ]
-"107
-[; ;main.c: 107:                 PORTAbits.RA1 = 1;
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-"108
-[; ;main.c: 108:                 break;
-[e $U 60  ]
-"109
-[; ;main.c: 109:             case 'd':
+"96
+[; ;main.c: 96:                     UARTSendString("\n\rApagando Led \0", 16);
+[e ( _UARTSendString (2 , :s 3C -> -> 16 `i `uc ]
+"97
+[; ;main.c: 97:                     PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"98
+[; ;main.c: 98:                     break;
+[e $U 61  ]
+"99
+[; ;main.c: 99:                 case 'c':
 [e :U 65 ]
-"110
-[; ;main.c: 110:                 UARTSendString("\n\rApagando Led \0", 16);
-[e ( _UARTSendString (2 , :s 8C -> -> 16 `i `uc ]
-"111
-[; ;main.c: 111:                 PORTAbits.RA1 = 0;
-[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
-"112
-[; ;main.c: 112:                 break;
-[e $U 60  ]
-"113
-[; ;main.c: 113:             case 'e':
+"100
+[; ;main.c: 100:                     UARTSendString("\n\rPrendiendo Led \0", 16);
+[e ( _UARTSendString (2 , :s 4C -> -> 16 `i `uc ]
+"101
+[; ;main.c: 101:                     PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+"102
+[; ;main.c: 102:                     break;
+[e $U 61  ]
+"103
+[; ;main.c: 103:                 case 'd':
 [e :U 66 ]
-"114
-[; ;main.c: 114:                 UARTSendString("\n\rPrendiendo Led \0", 16);
-[e ( _UARTSendString (2 , :s 9C -> -> 16 `i `uc ]
-"115
-[; ;main.c: 115:                 PORTAbits.RA2 = 1;
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-"116
-[; ;main.c: 116:                 break;
-[e $U 60  ]
-"117
-[; ;main.c: 117:             case 'f':
+"104
+[; ;main.c: 104:                     UARTSendString("\n\rApagando Led \0", 16);
+[e ( _UARTSendString (2 , :s 5C -> -> 16 `i `uc ]
+"105
+[; ;main.c: 105:                     PORTAbits.RA1 = 0;
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106:                     break;
+[e $U 61  ]
+"107
+[; ;main.c: 107:                 case 'e':
 [e :U 67 ]
-"118
-[; ;main.c: 118:                 UARTSendString("\n\rApagando Led \0", 16);
-[e ( _UARTSendString (2 , :s 10C -> -> 16 `i `uc ]
-"119
-[; ;main.c: 119:                 PORTAbits.RA2 = 0;
+"108
+[; ;main.c: 108:                     UARTSendString("\n\rPrendiendo Led \0", 16);
+[e ( _UARTSendString (2 , :s 6C -> -> 16 `i `uc ]
+"109
+[; ;main.c: 109:                     PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"110
+[; ;main.c: 110:                     break;
+[e $U 61  ]
+"111
+[; ;main.c: 111:                 case 'f':
+[e :U 68 ]
+"112
+[; ;main.c: 112:                     UARTSendString("\n\rApagando Led \0", 16);
+[e ( _UARTSendString (2 , :s 7C -> -> 16 `i `uc ]
+"113
+[; ;main.c: 113:                     PORTAbits.RA2 = 0;
 [e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:                 break;
-[e $U 60  ]
-"121
-[; ;main.c: 121:         }
+"114
+[; ;main.c: 114:                     break;
+[e $U 61  ]
+"115
+[; ;main.c: 115:             }
 }
-[e $U 60  ]
+[e $U 61  ]
+[e :U 62 ]
+[e [\ -> _letra `i , $ -> -> 97 `ui `i 63
+ , $ -> -> 98 `ui `i 64
+ , $ -> -> 99 `ui `i 65
+ , $ -> -> 100 `ui `i 66
+ , $ -> -> 101 `ui `i 67
+ , $ -> -> 102 `ui `i 68
+ 61 ]
 [e :U 61 ]
-[e [\ -> _letra `i , $ -> -> 97 `ui `i 62
- , $ -> -> 98 `ui `i 63
- , $ -> -> 99 `ui `i 64
- , $ -> -> 100 `ui `i 65
- , $ -> -> 101 `ui `i 66
- , $ -> -> 102 `ui `i 67
- 60 ]
+"116
+[; ;main.c: 116:         }
+}
 [e :U 60 ]
-"122
-[; ;main.c: 122:     }
+"117
+[; ;main.c: 117:     }
 }
 [e :U 57 ]
 [e $U 58  ]
 [e :U 59 ]
-"124
-[; ;main.c: 124:     return;
+"119
+[; ;main.c: 119:     return;
 [e $UE 56  ]
-"125
-[; ;main.c: 125: }
+"120
+[; ;main.c: 120: }
 [e :UE 56 ]
 }
-[a 2C 10 13 82 101 99 101 105 118 101 100 32 0 0 ]
-[a 5C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
-[a 7C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
-[a 9C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
-[a 6C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
-[a 8C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
-[a 10C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
-[a 1C 62 32 0 0 ]
-[a 3C 32 98 121 116 101 115 58 32 0 0 ]
-[a 4C 10 13 0 0 ]
+[a 2C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
+[a 4C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
+[a 6C 10 13 80 114 101 110 100 105 101 110 100 111 32 76 101 100 32 0 0 ]
+[a 3C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
+[a 5C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
+[a 7C 10 13 65 112 97 103 97 110 100 111 32 76 101 100 32 0 0 ]
+[a 1C 84 79 77 62 32 0 0 ]

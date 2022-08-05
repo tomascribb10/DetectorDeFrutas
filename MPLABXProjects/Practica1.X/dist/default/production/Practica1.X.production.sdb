@@ -11,7 +11,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"21 C:\Users\tomas\MPLABXProjects\Practica1.X\prac1.c
+"21 C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
 [v _main main `(v  1 e 1 0 ]
 [s S25 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -31,7 +31,7 @@
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "970
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"21 C:\Users\tomas\MPLABXProjects\Practica1.X\prac1.c
+"21 C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
 [v _main main `(v  1 e 1 0 ]
 {
 "33

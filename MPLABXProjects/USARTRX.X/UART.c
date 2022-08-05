@@ -65,8 +65,8 @@ void UARTSendString(const char* str, const uint8_t max_length) {
  * Determines whether a new data is available to read
  * @return 
  */
-uint8_t UARTDataReady() {
-    return PIR1bits.RCIF;
+short UARTDataReady(void) {
+    return PIR1bits.RCIF ? 1 : 0;
 }
 
 /**

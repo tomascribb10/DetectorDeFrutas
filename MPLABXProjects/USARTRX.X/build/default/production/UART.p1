@@ -294,14 +294,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 58 ]
 }
 "68
-[; ;UART.c: 68: uint8_t UARTDataReady() {
-[v _UARTDataReady `(uc ~T0 @X0 1 ef ]
+[; ;UART.c: 68: short UARTDataReady(void) {
+[v _UARTDataReady `(s ~T0 @X0 1 ef ]
 {
 [e :U _UARTDataReady ]
 [f ]
 "69
-[; ;UART.c: 69:     return PIR1bits.RCIF;
-[e ) . . _PIR1bits 0 5 ]
+[; ;UART.c: 69:     return PIR1bits.RCIF ? 1 : 0;
+[e ) -> ? != -> . . _PIR1bits 0 5 `i -> 0 `i : -> 1 `i -> 0 `i `s ]
 [e $UE 63  ]
 "70
 [; ;UART.c: 70: }

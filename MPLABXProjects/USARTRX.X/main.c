@@ -65,60 +65,55 @@ void main(void) {
     char letra;
     init();
     PORTAbits.RA0 = 1;
-    PORTAbits.RA1 = 1;
+    PORTAbits.RA1 = 0;
     PORTAbits.RA2 = 1;
-    PORTA = 0b00000111;
+    UARTSendString("TOM> \0", MAX_LENGTH_UART);
+    //PORTA = 0b00000111;
     while (1) {
-        
-        // Send prompt
-        UARTSendString("> \0", MAX_LENGTH_UART);
-        // Read response
-        nRead = UARTReadString(readBuf, MAX_LENGTH_UART);
-        // Send number of bytes received
-        itoa(tmpBuf, nRead, 10);
-        UARTSendString("\n\rReceived \0", MAX_LENGTH_UART);
-        UARTSendString(tmpBuf, MAX_LENGTH_UART);
-        UARTSendString(" bytes: \0", MAX_LENGTH_UART);
-        // Send echo of response.
-        UARTSendString(readBuf, nRead);
-        UARTSendString("\n\r\0", MAX_LENGTH_UART);
-        
-        //if (readBuf[0] == 'a' ){
-        //    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-        //    PORTAbits.RA0 = 1;
-        //}
-        //if (readBuf[0] == 'b' ){
-        //    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-        //    PORTAbits.RA0 = 0;
-        //}
-        letra = readBuf[0];
-                
-        switch (letra){
-            case 'a': 
-                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA0 = 1;
-                break;
-            case 'b':
-                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA0 = 0;                
-                break;
-            case 'c':    
-                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA1 = 1;
-                break;
-            case 'd':
-                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA1 = 0;
-                break;
-            case 'e':    
-                UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA2 = 1;  
-                break;      
-            case 'f':
-                UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                PORTAbits.RA2 = 0;
-                break;             
-        } 
+        if(UARTDataReady() > 0){       // Verifica si ha recibido datos por el puerto serial
+            // Send prompt
+            //UARTSendString("TOM> \0", MAX_LENGTH_UART);
+            // Read response
+            //nRead = UARTReadString(readBuf, MAX_LENGTH_UART);
+            // Send number of bytes received
+            //itoa(tmpBuf, nRead, 10);
+            //UARTSendString("\n\rReceived \0", MAX_LENGTH_UART);
+            //UARTSendString(tmpBuf, MAX_LENGTH_UART);
+            //UARTSendString(" bytes: \0", MAX_LENGTH_UART);
+            // Send echo of response.
+            //UARTSendString(readBuf, nRead);
+            //UARTSendString("\n\r\0", MAX_LENGTH_UART);
+            //letra = readBuf[0];
+            
+            letra = UARTReadChar();
+            
+            switch (letra){
+                case 'a': 
+                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA0 = 1;
+                    break;
+                case 'b':
+                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA0 = 0;                
+                    break;
+                case 'c':    
+                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA1 = 1;
+                    break;
+                case 'd':
+                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA1 = 0;
+                    break;
+                case 'e':    
+                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA2 = 1;  
+                    break;      
+                case 'f':
+                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTAbits.RA2 = 0;
+                    break;             
+            }
+        }
     }
     
     return;

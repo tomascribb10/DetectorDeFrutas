@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.36\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Practica1.X.production.sym \
   --cmf=dist/default/production\Practica1.X.production.cmf -z -Q16F628A \
-  -oC:\Users\tomas\AppData\Local\Temp\xcAsds0.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\tomas\AppData\Local\Temp\xcAsja0.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Practica1.X.production.map \
-  --md=C:\Users\tomas\AppData\Local\Temp\xcAsds0.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\tomas\AppData\Local\Temp\xcAsja0.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFh -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 \
   -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0120h-014Fh \
@@ -18,7 +18,7 @@ Linker command line:
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry,init,end_init -ppowerup=CODE \
   -pcinit=CODE -pfunctab=ENTRY -k \
-  C:\Users\tomas\AppData\Local\Temp\xcAsds0.o \
+  C:\Users\tomas\AppData\Local\Temp\xcAsja0.o \
   dist/default/production\Practica1.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F628A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tomas\AppData\Local\Temp\xcAsds0.o
+C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
                 end_init                              0        0        1        0       0
                 config                             2007     2007        1        0       4
                 idloc                              2000     2000        4        0       5

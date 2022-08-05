@@ -1,0 +1,216 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"14 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\servo.c
+[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
+"65
+[v _Servo_1_Write Servo_1_Write `(v  1 e 1 0 ]
+"72
+[v _Servo_2_Write Servo_2_Write `(v  1 e 1 0 ]
+"79
+[v _Servo_3_Write Servo_3_Write `(v  1 e 1 0 ]
+"86
+[v _Servo_4_Write Servo_4_Write `(v  1 e 1 0 ]
+"121
+[v _TMR0_ISR TMR0_ISR `IIH(v  1 e 1 0 ]
+"20 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\Servos_Multi.c
+[v _main main `(v  1 e 1 0 ]
+[s S136 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"3290 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[s S145 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S154 . 1 `S136 1 . 1 0 `S145 1 . 1 0 ]
+[v _LATDbits LATDbits `VES154  1 e 1 @3980 ]
+[s S96 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"4033
+[s S105 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S114 . 1 `S96 1 . 1 0 `S105 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES114  1 e 1 @3989 ]
+[s S24 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 VCFG 1 0 :2:4 
+]
+"6606
+[s S27 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+]
+[s S34 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 VCFG01 1 0 :1:4 
+`uc 1 VCFG11 1 0 :1:5 
+]
+[u S39 . 1 `S24 1 . 1 0 `S27 1 . 1 0 `S34 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES39  1 e 1 @4033 ]
+"8069
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+[s S226 . 1 `uc 1 T0PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 T08BIT 1 0 :1:6 
+`uc 1 TMR0ON 1 0 :1:7 
+]
+"8089
+[s S233 . 1 `uc 1 T0PS0 1 0 :1:0 
+`uc 1 T0PS1 1 0 :1:1 
+`uc 1 T0PS2 1 0 :1:2 
+]
+[u S237 . 1 `S226 1 . 1 0 `S233 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES237  1 e 1 @4053 ]
+"8139
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+[s S176 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8614
+[s S185 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S194 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S198 . 1 `S176 1 . 1 0 `S185 1 . 1 0 `S194 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES198  1 e 1 @4082 ]
+"11 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\servo.c
+[v _cont_sr cont_sr `ui  1 e 2 0 ]
+"12
+[v _data_s data_s `[8]uc  1 e 8 0 ]
+"20 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\Servos_Multi.c
+[v _main main `(v  1 e 1 0 ]
+{
+"39
+} 0
+"14 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\servo.c
+[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
+{
+"62
+} 0
+"86
+[v _Servo_4_Write Servo_4_Write `(v  1 e 1 0 ]
+{
+[v Servo_4_Write@ang ang `uc  1 a 1 wreg ]
+[v Servo_4_Write@ang ang `uc  1 a 1 wreg ]
+"88
+[v Servo_4_Write@ang ang `uc  1 a 1 8 ]
+"89
+} 0
+"79
+[v _Servo_3_Write Servo_3_Write `(v  1 e 1 0 ]
+{
+[v Servo_3_Write@ang ang `uc  1 a 1 wreg ]
+[v Servo_3_Write@ang ang `uc  1 a 1 wreg ]
+"81
+[v Servo_3_Write@ang ang `uc  1 a 1 8 ]
+"82
+} 0
+"72
+[v _Servo_2_Write Servo_2_Write `(v  1 e 1 0 ]
+{
+[v Servo_2_Write@ang ang `uc  1 a 1 wreg ]
+[v Servo_2_Write@ang ang `uc  1 a 1 wreg ]
+"74
+[v Servo_2_Write@ang ang `uc  1 a 1 8 ]
+"75
+} 0
+"65
+[v _Servo_1_Write Servo_1_Write `(v  1 e 1 0 ]
+{
+[v Servo_1_Write@ang ang `uc  1 a 1 wreg ]
+[v Servo_1_Write@ang ang `uc  1 a 1 wreg ]
+"67
+[v Servo_1_Write@ang ang `uc  1 a 1 8 ]
+"68
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"121 C:\Users\DELL\MPLABXProjects\Servos_Multi.X\servo.c
+[v _TMR0_ISR TMR0_ISR `IIH(v  1 e 1 0 ]
+{
+"164
+} 0

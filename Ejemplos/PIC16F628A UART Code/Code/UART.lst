@@ -1,0 +1,690 @@
+
+
+HI-TECH Software PIC PRO Macro Assembler V9.83 build 10920 
+                                                                                               Thu Sep 19 11:17:20 2013
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 10920
+     1                           	processor	16F628A
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	config,global,class=CONFIG,delta=2
+     5                           	psect	text128,local,class=CODE,delta=2
+     6                           	psect	strings,global,class=STRING,delta=2
+     7                           	psect	cinit,global,class=CODE,delta=2
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,delta=2
+    10                           	psect	text129,local,class=CODE,delta=2
+    11                           	psect	text130,local,class=CODE,delta=2
+    12                           	psect	text131,local,class=CODE,delta=2
+    13                           	psect	text132,local,class=CODE,delta=2
+    14                           	psect	intentry,global,class=CODE,delta=2
+    15                           	psect	text133,local,class=CODE,delta=2
+    16                           	psect	text134,local,class=CODE,delta=2
+    17                           	psect	pa_nodes,global,class=CODE,delta=2
+    18                           	dabs	1,0x7E,2
+    19  000A                     	;#
+    20                           
+    21                           	psect	config
+    22  2007  FF62               	dw	65378	;#
+    23                           
+    24                           	psect	text128
+    25  0000                     __ptext128:	
+    26  001A                     _RCREG	set	26
+    27  0019                     _TXREG	set	25
+    28  00C4                     _CREN	set	196
+    29  005F                     _GIE	set	95
+    30  00C1                     _OERR	set	193
+    31  005E                     _PEIE	set	94
+    32  0065                     _RCIF	set	101
+    33  00C6                     _RX9	set	198
+    34  00C7                     _SPEN	set	199
+    35  00C5                     _SREN	set	197
+    36  0064                     _TXIF	set	100
+    37  0099                     _SPBRG	set	153
+    38  04C2                     _BRGH	set	1218
+    39  0465                     _RCIE	set	1125
+    40  04C4                     _SYNC	set	1220
+    41  0431                     _TRISB1	set	1073
+    42  0432                     _TRISB2	set	1074
+    43  04C6                     _TX9	set	1222
+    44  04C5                     _TXEN	set	1221
+    45  0464                     _TXIE	set	1124
+    46                           
+    47                           	psect	strings
+    48  0020                     __pstrings:	
+    49  0020                     stringtab:	
+    50                           ;	global	stringdir,stringtab,__stringbase
+    51                           
+    52  0020                     stringcode:	
+    53                           ;	String table - string pointers are 1 byte each
+    54                           
+    55  0020                     stringdir:	
+    56  0020  3000               	movlw	high stringdir
+    57  0021  008A               	movwf	10
+    58  0022  0804               	movf	4,w
+    59  0023  0A84               	incf	4,f
+    60  0024  0782               	addwf	2,f
+    61  0025                     __stringbase:	
+    62  0025  3400               	retlw	0
+    63  0026                     STR_1:	
+    64  0026  3448               	retlw	72	;'H'
+    65  0027  3465               	retlw	101	;'e'
+    66  0028  346C               	retlw	108	;'l'
+    67  0029  346C               	retlw	108	;'l'
+    68  002A  346F               	retlw	111	;'o'
+    69  002B  3420               	retlw	32	;' '
+    70  002C  3457               	retlw	87	;'W'
+    71  002D  346F               	retlw	111	;'o'
+    72  002E  3472               	retlw	114	;'r'
+    73  002F  346C               	retlw	108	;'l'
+    74  0030  3464               	retlw	100	;'d'
+    75  0031  3421               	retlw	33	;'!'
+    76  0032  3400               	retlw	0
+    77                           
+    78                           	psect	cinit
+    79  0064                     start_initialization:	
+    80  0064                     end_of_initialization:	
+    81                           ;End of C runtime variable initialization code
+    82                           
+    83  0064  0183               	clrf	3
+    84  0065  2858               	ljmp	_main	;jump to C main() function
+    85                           
+    86                           	psect	cstackCOMMON
+    87  0070                     __pcstackCOMMON:	
+    88  0070                     ?_SendByteSerially:	
+    89  0070                     ?_InitUART:	
+    90                           ; 0 bytes @ 0x0
+    91                           
+    92  0070                     ?_SendStringSerially:	
+    93                           ; 0 bytes @ 0x0
+    94                           
+    95  0070                     ?_ISR:	
+    96                           ; 0 bytes @ 0x0
+    97                           
+    98  0070                     ?_main:	
+    99                           ; 0 bytes @ 0x0
+   100                           
+   101  0070                     ?i1_SendByteSerially:	
+   102                           ; 0 bytes @ 0x0
+   103                           
+   104  0070                     ??i1_SendByteSerially:	
+   105                           ; 0 bytes @ 0x0
+   106                           
+   107  0070                     i1SendByteSerially@Byte:	
+   108                           ; 0 bytes @ 0x0
+   109                           
+   110                           
+   111                           ; 1 bytes @ 0x0
+   112  0070                     	ds	1
+   113  0071                     ??_ISR:	
+   114                           
+   115                           ; 0 bytes @ 0x1
+   116  0071                     	ds	2
+   117  0073                     ??_SendByteSerially:	
+   118  0073                     ??_InitUART:	
+   119                           ; 0 bytes @ 0x3
+   120                           
+   121  0073                     SendByteSerially@Byte:	
+   122                           ; 0 bytes @ 0x3
+   123                           
+   124                           
+   125                           ; 1 bytes @ 0x3
+   126  0073                     	ds	1
+   127  0074                     ??_SendStringSerially:	
+   128  0074                     SendStringSerially@st:	
+   129                           ; 0 bytes @ 0x4
+   130                           
+   131                           
+   132                           ; 1 bytes @ 0x4
+   133  0074                     	ds	1
+   134  0075                     ??_main:	
+   135                           
+   136                           	psect	maintext
+   137  0058                     __pmaintext:	
+   138                           ; 0 bytes @ 0x5
+   139 ;;Data sizes: Strings 13, constant 0, data 0, bss 0, persistent 0 stack 0
+   140 ;;Auto spaces:   Size  Autos    Used
+   141 ;; COMMON          14      5       5
+   142 ;; BANK0           80      0       0
+   143 ;; BANK1           80      0       0
+   144 ;; BANK2           48      0       0
+   145 ;;
+   146 ;; Pointer list with targets:
+   147 ;; SendStringSerially@st	PTR const unsigned char  size(1) Largest target is 13
+   148 ;;		 -> STR_1(CODE[13]), 
+   149 ;;
+   150 ;;
+   151 ;; Critical Paths under _main in COMMON
+   152 ;;
+   153 ;;   _main->_SendStringSerially
+   154 ;;   _SendStringSerially->_SendByteSerially
+   155 ;;
+   156 ;; Critical Paths under _ISR in COMMON
+   157 ;;
+   158 ;;   _ISR->i1_SendByteSerially
+   159 ;;
+   160 ;; Critical Paths under _main in BANK0
+   161 ;;
+   162 ;;   None.
+   163 ;;
+   164 ;; Critical Paths under _ISR in BANK0
+   165 ;;
+   166 ;;   None.
+   167 ;;
+   168 ;; Critical Paths under _main in BANK1
+   169 ;;
+   170 ;;   None.
+   171 ;;
+   172 ;; Critical Paths under _ISR in BANK1
+   173 ;;
+   174 ;;   None.
+   175 ;;
+   176 ;; Critical Paths under _main in BANK2
+   177 ;;
+   178 ;;   None.
+   179 ;;
+   180 ;; Critical Paths under _ISR in BANK2
+   181 ;;
+   182 ;;   None.
+   183 ;;
+   184 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   185 ;;
+   186 ;;
+   187 ;;Call Graph Tables:
+   188 ;;
+   189 ;; ---------------------------------------------------------------------------------
+   190 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   191 ;; ---------------------------------------------------------------------------------
+   192 ;; (0) _main                                                 0     0      0      45
+   193 ;;                           _InitUART
+   194 ;;                 _SendStringSerially
+   195 ;; ---------------------------------------------------------------------------------
+   196 ;; (1) _SendStringSerially                                   1     1      0      45
+   197 ;;                                              4 COMMON     1     1      0
+   198 ;;                   _SendByteSerially
+   199 ;; ---------------------------------------------------------------------------------
+   200 ;; (1) _InitUART                                             0     0      0       0
+   201 ;; ---------------------------------------------------------------------------------
+   202 ;; (2) _SendByteSerially                                     1     1      0      15
+   203 ;;                                              3 COMMON     1     1      0
+   204 ;; ---------------------------------------------------------------------------------
+   205 ;; Estimated maximum stack depth 2
+   206 ;; ---------------------------------------------------------------------------------
+   207 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   208 ;; ---------------------------------------------------------------------------------
+   209 ;; (3) _ISR                                                  2     2      0      73
+   210 ;;                                              1 COMMON     2     2      0
+   211 ;;                 i1_SendByteSerially
+   212 ;; ---------------------------------------------------------------------------------
+   213 ;; (4) i1_SendByteSerially                                   1     1      0      73
+   214 ;;                                              0 COMMON     1     1      0
+   215 ;; ---------------------------------------------------------------------------------
+   216 ;; Estimated maximum stack depth 4
+   217 ;; ---------------------------------------------------------------------------------
+   218 ;; Call Graph Graphs:
+   219 ;; _main (ROOT)
+   220 ;;   _InitUART
+   221 ;;   _SendStringSerially
+   222 ;;     _SendByteSerially
+   223 ;;
+   224 ;; _ISR (ROOT)
+   225 ;;   i1_SendByteSerially
+   226 ;;
+   227 ;; Address spaces:
+   228 ;;Name               Size   Autos  Total    Cost      Usage
+   229 ;;BITCOMMON            E      0       0       0        0.0%
+   230 ;;EEDATA              80      0       0       0        0.0%
+   231 ;;NULL                 0      0       0       0        0.0%
+   232 ;;CODE                 0      0       0       0        0.0%
+   233 ;;COMMON               E      5       5       1       35.7%
+   234 ;;BITSFR0              0      0       0       1        0.0%
+   235 ;;SFR0                 0      0       0       1        0.0%
+   236 ;;BITSFR1              0      0       0       2        0.0%
+   237 ;;SFR1                 0      0       0       2        0.0%
+   238 ;;STACK                0      0       6       2        0.0%
+   239 ;;BANK0               50      0       0       3        0.0%
+   240 ;;BITSFR3              0      0       0       4        0.0%
+   241 ;;SFR3                 0      0       0       4        0.0%
+   242 ;;ABS                  0      0       0       4        0.0%
+   243 ;;BITBANK0            50      0       0       5        0.0%
+   244 ;;BITSFR2              0      0       0       5        0.0%
+   245 ;;SFR2                 0      0       0       5        0.0%
+   246 ;;BITBANK1            50      0       0       6        0.0%
+   247 ;;BANK1               50      0       0       7        0.0%
+   248 ;;BITBANK2            30      0       0       8        0.0%
+   249 ;;BANK2               30      0       0       9        0.0%
+   250 ;;DATA                 0      0       0      10        0.0%
+   251                           
+   252                           
+   253 ;; *************** function _main *****************
+   254 ;; Defined at:
+   255 ;;		line 16 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\Main.c"
+   256 ;; Parameters:    Size  Location     Type
+   257 ;;		None
+   258 ;; Auto vars:     Size  Location     Type
+   259 ;;		None
+   260 ;; Return value:  Size  Location     Type
+   261 ;;		None               void
+   262 ;; Registers used:
+   263 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   264 ;; Tracked objects:
+   265 ;;		On entry : 17F/0
+   266 ;;		On exit  : 15F/0
+   267 ;;		Unchanged: FFE80/0
+   268 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   269 ;;      Params:         0       0       0       0
+   270 ;;      Locals:         0       0       0       0
+   271 ;;      Temps:          0       0       0       0
+   272 ;;      Totals:         0       0       0       0
+   273 ;;Total ram usage:        0 bytes
+   274 ;; Hardware stack levels required when called:    4
+   275 ;; This function calls:
+   276 ;;		_InitUART
+   277 ;;		_SendStringSerially
+   278 ;; This function is called by:
+   279 ;;		Startup code after reset
+   280 ;; This function uses a non-reentrant model
+   281 ;;
+   282  0058                     _main:	
+   283                           
+   284                           ;Main.c: 17: InitUART();
+   285                           
+   286                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   287  0058  200B               	fcall	_InitUART
+   288                           
+   289                           ;Main.c: 19: SendStringSerially("Hello World!");
+   290  0059  3001               	movlw	(STR_1-__stringbase)& (0+255)
+   291  005A  2044               	fcall	_SendStringSerially
+   292                           
+   293                           ;Main.c: 21: GIE = 1;
+   294  005B  178B               	bsf	11,7
+   295                           
+   296                           ;Main.c: 22: PEIE = 1;
+   297  005C  170B               	bsf	11,6
+   298  005D                     l763:	
+   299                           ;Main.c: 25: {
+   300                           
+   301  005D  285D               	goto	l763
+   302  005E                     __end_of_main:	
+   303                           
+   304                           	psect	text129
+   305  0044                     __ptext129:	
+   306 ;; =============== function _main ends ============
+   307                           
+   308                           
+   309 ;; *************** function _SendStringSerially *****************
+   310 ;; Defined at:
+   311 ;;		line 47 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\UART.c"
+   312 ;; Parameters:    Size  Location     Type
+   313 ;;  st              1    wreg     PTR const unsigned char 
+   314 ;;		 -> STR_1(13), 
+   315 ;; Auto vars:     Size  Location     Type
+   316 ;;  st              1    4[COMMON] PTR const unsigned char 
+   317 ;;		 -> STR_1(13), 
+   318 ;; Return value:  Size  Location     Type
+   319 ;;		None               void
+   320 ;; Registers used:
+   321 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   322 ;; Tracked objects:
+   323 ;;		On entry : 17F/20
+   324 ;;		On exit  : 15F/0
+   325 ;;		Unchanged: FFE80/0
+   326 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   327 ;;      Params:         0       0       0       0
+   328 ;;      Locals:         1       0       0       0
+   329 ;;      Temps:          0       0       0       0
+   330 ;;      Totals:         1       0       0       0
+   331 ;;Total ram usage:        1 bytes
+   332 ;; Hardware stack levels used:    1
+   333 ;; Hardware stack levels required when called:    3
+   334 ;; This function calls:
+   335 ;;		_SendByteSerially
+   336 ;; This function is called by:
+   337 ;;		_main
+   338 ;; This function uses a non-reentrant model
+   339 ;;
+   340  0044                     _SendStringSerially:	
+   341                           
+   342                           ; Regs used in _SendStringSerially: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   343                           ;SendStringSerially@st stored from wreg
+   344  0044  00F4               	movwf	SendStringSerially@st
+   345  0045                     l1984:	
+   346                           ;UART.c: 48: while(*st)
+   347                           
+   348  0045  0874               	movf	SendStringSerially@st,w
+   349  0046  0084               	movwf	4
+   350  0047  2020               	fcall	stringdir
+   351  0048  3800               	iorlw	0
+   352  0049  1903               	btfsc	3,2
+   353  004A  0008               	return
+   354                           
+   355                           ;UART.c: 49: SendByteSerially(*st++);
+   356  004B  0874               	movf	SendStringSerially@st,w
+   357  004C  0084               	movwf	4
+   358  004D  2020               	fcall	stringdir
+   359  004E  2051               	fcall	_SendByteSerially
+   360  004F  0AF4               	incf	SendStringSerially@st,f
+   361  0050  2845               	goto	l1984
+   362  0051                     __end_of_SendStringSerially:	
+   363                           
+   364                           	psect	text130
+   365  000B                     __ptext130:	
+   366 ;; =============== function _SendStringSerially ends ============
+   367                           
+   368                           
+   369 ;; *************** function _InitUART *****************
+   370 ;; Defined at:
+   371 ;;		line 8 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\UART.c"
+   372 ;; Parameters:    Size  Location     Type
+   373 ;;		None
+   374 ;; Auto vars:     Size  Location     Type
+   375 ;;		None
+   376 ;; Return value:  Size  Location     Type
+   377 ;;		None               void
+   378 ;; Registers used:
+   379 ;;		wreg
+   380 ;; Tracked objects:
+   381 ;;		On entry : 17F/0
+   382 ;;		On exit  : 17F/20
+   383 ;;		Unchanged: FFE80/0
+   384 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   385 ;;      Params:         0       0       0       0
+   386 ;;      Locals:         0       0       0       0
+   387 ;;      Temps:          0       0       0       0
+   388 ;;      Totals:         0       0       0       0
+   389 ;;Total ram usage:        0 bytes
+   390 ;; Hardware stack levels used:    1
+   391 ;; Hardware stack levels required when called:    2
+   392 ;; This function calls:
+   393 ;;		Nothing
+   394 ;; This function is called by:
+   395 ;;		_main
+   396 ;; This function uses a non-reentrant model
+   397 ;;
+   398  000B                     _InitUART:	
+   399  000B  3081               	movlw	129
+   400                           
+   401                           ;UART.c: 9: TRISB2 = 0;
+   402                           
+   403                           ; Regs used in _InitUART: [wreg]
+   404  000C  1683               	bsf	3,5	;RP0=1, select bank1
+   405  000D  1106               	bcf	6,2
+   406                           
+   407                           ;UART.c: 10: TRISB1 = 1;
+   408  000E  1486               	bsf	6,1
+   409                           
+   410                           ;UART.c: 12: SPBRG = ((20000000/16)/9600) - 1;
+   411  000F  0099               	movwf	25	;volatile
+   412                           
+   413                           ;UART.c: 13: BRGH = 1;
+   414  0010  1518               	bsf	24,2
+   415                           
+   416                           ;UART.c: 14: SYNC = 0;
+   417  0011  1218               	bcf	24,4
+   418                           
+   419                           ;UART.c: 15: SPEN = 1;
+   420  0012  1283               	bcf	3,5	;RP0=0, select bank0
+   421  0013  1798               	bsf	24,7
+   422                           
+   423                           ;UART.c: 16: CREN = 1;
+   424  0014  1618               	bsf	24,4
+   425                           
+   426                           ;UART.c: 17: SREN = 0;
+   427  0015  1298               	bcf	24,5
+   428                           
+   429                           ;UART.c: 18: TXIE = 0;
+   430  0016  1683               	bsf	3,5	;RP0=1, select bank1
+   431  0017  120C               	bcf	12,4
+   432                           
+   433                           ;UART.c: 19: RCIE = 1;
+   434  0018  168C               	bsf	12,5
+   435                           
+   436                           ;UART.c: 20: TX9 = 0;
+   437  0019  1318               	bcf	24,6
+   438                           
+   439                           ;UART.c: 21: RX9 = 0;
+   440  001A  1283               	bcf	3,5	;RP0=0, select bank0
+   441  001B  1318               	bcf	24,6
+   442                           
+   443                           ;UART.c: 22: TXEN = 0;
+   444  001C  1683               	bsf	3,5	;RP0=1, select bank1
+   445  001D  1298               	bcf	24,5
+   446                           
+   447                           ;UART.c: 23: TXEN = 1;
+   448  001E  1698               	bsf	24,5
+   449  001F  0008               	return
+   450  0020                     __end_of_InitUART:	
+   451                           
+   452                           	psect	text131
+   453  0051                     __ptext131:	
+   454 ;; =============== function _InitUART ends ============
+   455                           
+   456                           
+   457 ;; *************** function _SendByteSerially *****************
+   458 ;; Defined at:
+   459 ;;		line 28 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\UART.c"
+   460 ;; Parameters:    Size  Location     Type
+   461 ;;  Byte            1    wreg     unsigned char 
+   462 ;; Auto vars:     Size  Location     Type
+   463 ;;  Byte            1    3[COMMON] unsigned char 
+   464 ;; Return value:  Size  Location     Type
+   465 ;;		None               void
+   466 ;; Registers used:
+   467 ;;		wreg
+   468 ;; Tracked objects:
+   469 ;;		On entry : 15F/20
+   470 ;;		On exit  : 17F/0
+   471 ;;		Unchanged: FFE80/0
+   472 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   473 ;;      Params:         0       0       0       0
+   474 ;;      Locals:         1       0       0       0
+   475 ;;      Temps:          0       0       0       0
+   476 ;;      Totals:         1       0       0       0
+   477 ;;Total ram usage:        1 bytes
+   478 ;; Hardware stack levels used:    1
+   479 ;; Hardware stack levels required when called:    2
+   480 ;; This function calls:
+   481 ;;		Nothing
+   482 ;; This function is called by:
+   483 ;;		_SendStringSerially
+   484 ;; This function uses a non-reentrant model
+   485 ;;
+   486  0051                     _SendByteSerially:	
+   487                           
+   488                           ; Regs used in _SendByteSerially: [wreg]
+   489                           ;SendByteSerially@Byte stored from wreg
+   490  0051  00F3               	movwf	SendByteSerially@Byte
+   491  0052                     l1145:	
+   492                           ;UART.c: 29: while(!TXIF);
+   493                           
+   494  0052  1283               	bcf	3,5	;RP0=0, select bank0
+   495  0053  1E0C               	btfss	12,4
+   496  0054  2852               	goto	l1145
+   497                           
+   498                           ;UART.c: 30: TXREG = Byte;
+   499  0055  0873               	movf	SendByteSerially@Byte,w
+   500  0056  0099               	movwf	25	;volatile
+   501  0057  0008               	return
+   502  0058                     __end_of_SendByteSerially:	
+   503                           
+   504                           	psect	text132
+   505  0033                     __ptext132:	
+   506 ;; =============== function _SendByteSerially ends ============
+   507                           
+   508                           
+   509 ;; *************** function _ISR *****************
+   510 ;; Defined at:
+   511 ;;		line 6 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\ISR.c"
+   512 ;; Parameters:    Size  Location     Type
+   513 ;;		None
+   514 ;; Auto vars:     Size  Location     Type
+   515 ;;		None
+   516 ;; Return value:  Size  Location     Type
+   517 ;;		None               void
+   518 ;; Registers used:
+   519 ;;		wreg, status,2, status,0, pclath, cstack
+   520 ;; Tracked objects:
+   521 ;;		On entry : 0/0
+   522 ;;		On exit  : 60/0
+   523 ;;		Unchanged: FFF9F/0
+   524 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   525 ;;      Params:         0       0       0       0
+   526 ;;      Locals:         0       0       0       0
+   527 ;;      Temps:          2       0       0       0
+   528 ;;      Totals:         2       0       0       0
+   529 ;;Total ram usage:        2 bytes
+   530 ;; Hardware stack levels used:    1
+   531 ;; Hardware stack levels required when called:    1
+   532 ;; This function calls:
+   533 ;;		i1_SendByteSerially
+   534 ;; This function is called by:
+   535 ;;		Interrupt level 1
+   536 ;; This function uses a non-reentrant model
+   537 ;;
+   538  0033                     _ISR:	
+   539                           
+   540                           ;ISR.c: 7: if(RCIF)
+   541  0033  1283               	bcf	3,5	;RP0=0, select bank0
+   542  0034  1303               	bcf	3,6	;RP1=0, select bank0
+   543  0035  1E8C               	btfss	12,5
+   544  0036  283D               	goto	i1l381
+   545                           
+   546                           ;ISR.c: 8: {
+   547                           ;ISR.c: 9: if(OERR)
+   548  0037  1C98               	btfss	24,1
+   549  0038  283B               	goto	i1l2000
+   550                           
+   551                           ;ISR.c: 10: {
+   552                           ;ISR.c: 11: CREN = 0;
+   553  0039  1218               	bcf	24,4
+   554                           
+   555                           ;ISR.c: 12: CREN = 1;
+   556  003A  1618               	bsf	24,4
+   557  003B                     i1l2000:	
+   558                           
+   559                           ;ISR.c: 13: }
+   560                           ;ISR.c: 15: SendByteSerially(RCREG);
+   561  003B  081A               	movf	26,w	;volatile
+   562  003C  205E               	fcall	i1_SendByteSerially
+   563  003D                     i1l381:	
+   564  003D  0872               	movf	??_ISR+1,w
+   565  003E  008A               	movwf	10
+   566  003F  0E71               	swapf	??_ISR^(0+-128),w
+   567  0040  0083               	movwf	3
+   568  0041  0EFE               	swapf	126,f
+   569  0042  0E7E               	swapf	126,w
+   570  0043  0009               	retfie
+   571  0044                     __end_of_ISR:	
+   572                           
+   573                           	psect	intentry
+   574  0004                     __pintentry:	
+   575                           ; Regs used in _ISR: [wreg+status,2+status,0+pclath+cstack]
+   576                           
+   577  0004                     interrupt_function:	
+   578  007E                     saved_w	set	btemp
+   579  0004  00FE               	movwf	btemp
+   580  0005  0E03               	swapf	3,w
+   581  0006  00F1               	movwf	??_ISR
+   582  0007  080A               	movf	10,w
+   583  0008  00F2               	movwf	??_ISR+1
+   584  0009  2833               	ljmp	_ISR
+   585                           
+   586                           	psect	text133
+   587  005E                     __ptext133:	
+   588 ;; =============== function _ISR ends ============
+   589                           
+   590                           
+   591 ;; *************** function i1_SendByteSerially *****************
+   592 ;; Defined at:
+   593 ;;		line 28 in file "C:\Users\Saeed\Desktop\PIC16F628A UART Code\Code\UART.c"
+   594 ;; Parameters:    Size  Location     Type
+   595 ;;  SendByteSeri    1    wreg     unsigned char 
+   596 ;; Auto vars:     Size  Location     Type
+   597 ;;  SendByteSeri    1    0[COMMON] unsigned char 
+   598 ;; Return value:  Size  Location     Type
+   599 ;;		None               void
+   600 ;; Registers used:
+   601 ;;		wreg
+   602 ;; Tracked objects:
+   603 ;;		On entry : 60/0
+   604 ;;		On exit  : 60/0
+   605 ;;		Unchanged: FFF9F/0
+   606 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   607 ;;      Params:         0       0       0       0
+   608 ;;      Locals:         1       0       0       0
+   609 ;;      Temps:          0       0       0       0
+   610 ;;      Totals:         1       0       0       0
+   611 ;;Total ram usage:        1 bytes
+   612 ;; Hardware stack levels used:    1
+   613 ;; This function calls:
+   614 ;;		Nothing
+   615 ;; This function is called by:
+   616 ;;		_ISR
+   617 ;; This function uses a non-reentrant model
+   618 ;;
+   619  005E                     i1_SendByteSerially:	
+   620                           
+   621                           ; Regs used in i1_SendByteSerially: [wreg]
+   622                           ;i1SendByteSerially@Byte stored from wreg
+   623  005E  00F0               	movwf	i1SendByteSerially@Byte
+   624  005F                     i1l1145:	
+   625                           ;UART.c: 29: while(!TXIF);
+   626                           
+   627  005F  1E0C               	btfss	12,4
+   628  0060  285F               	goto	i1l1145
+   629                           
+   630                           ;UART.c: 30: TXREG = Byte;
+   631  0061  0870               	movf	i1SendByteSerially@Byte,w
+   632  0062  0099               	movwf	25	;volatile
+   633  0063  0008               	return
+   634  0064                     __end_ofi1_SendByteSerially:	
+   635                           
+   636                           	psect	text134
+   637  0000                     __ptext134:	
+   638 ;; =============== function i1_SendByteSerially ends ============
+   639                           
+   640  007E                     btemp	set	126	;btemp
+   641  007E                     wtemp0	set	126
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Thu Sep 19 11:17:20 2013
+
+                          pc 0002                           fsr 0004                          l763 005D  
+                        _GIE 005F                          _ISR 0033                          _RX9 00C6  
+                        _TX9 04C6                          fsr0 0004                         ?_ISR 0070  
+                       l1142 0000                         l1145 0052                         l1161 0000  
+                       l1148 0000                         l1940 0000                         l1950 0000  
+                       l1960 0000                         l1952 0000                         l1944 0000  
+                       l1962 0000                         l1954 0000                         l1946 0000  
+                       l1964 0000                         l1956 0000                         l1948 0000  
+                       l1966 0000                         l1958 0000                         l1982 0000  
+                       l1990 0000                         l1968 0000                         l1984 0045  
+                       l1992 0000                         l1978 0000                         l1986 0000  
+                       l1988 0000                         STR_1 0026                         _BRGH 04C2  
+                       _CREN 00C4                         _PEIE 005E                         _RCIE 0465  
+                       _RCIF 0065                         _OERR 00C1                         _SPEN 00C7  
+                       _SREN 00C5                         _TXIE 0464                         _TXEN 04C5  
+                       _TXIF 0064                         _SYNC 04C4                         _main 0058  
+                       btemp 007E                         start 000A                        ??_ISR 0071  
+                      ?_main 0070                        i1l381 003D                        _RCREG 001A  
+                      _SPBRG 0099                        _TXREG 0019           _SendStringSerially 0044  
+                      pclath 000A          ?_SendStringSerially 0070                        status 0003  
+                      wtemp0 007E                 __end_of_main 005E             __end_of_InitUART 0020  
+       ??_SendStringSerially 0074                       ??_main 0075           i1_SendByteSerially 005E  
+                     i1l2000 003B                       i1l2002 0000                       i1l1145 005F  
+                     i1l1148 0000                       i1l1994 0000                       _TRISB1 0431  
+                     _TRISB2 0432          ?i1_SendByteSerially 0070       i1SendByteSerially@Byte 0070  
+       ??i1_SendByteSerially 0070     __end_of_SendByteSerially 0058                       saved_w 007E  
+             __pcstackCOMMON 0070         SendByteSerially@Byte 0073                    ?_InitUART 0070  
+                 __pmaintext 0058                   __pintentry 0004                   ??_InitUART 0073  
+       SendStringSerially@st 0074                 __size_of_ISR 0011         end_of_initialization 0064  
+__size_of_SendStringSerially 000D            ?_SendByteSerially 0070           ??_SendByteSerially 0073  
+__size_ofi1_SendByteSerially 0006          start_initialization 0064                  __end_of_ISR 0044  
+          __size_of_InitUART 0015                    __ptext130 000B                    __ptext131 0051  
+                  __ptext132 0033                    __ptext133 005E                    __ptext134 0000  
+                  __ptext128 0000                    __ptext129 0044                    __pstrings 0020  
+          interrupt_function 0004                  __stringbase 0025                     _InitUART 000B  
+  __size_of_SendByteSerially 0007   __end_of_SendStringSerially 0051                __size_of_main 0006  
+ __end_ofi1_SendByteSerially 0064                     intlevel1 0000                    stringcode 0020  
+                   stringdir 0020                     stringtab 0020             _SendByteSerially 0051  

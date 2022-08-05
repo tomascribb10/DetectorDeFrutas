@@ -1162,7 +1162,7 @@ void UARTSendString(const char* str, const uint8_t max_length);
 
 
 
-uint8_t UARTDataReady();
+short UARTDataReady();
 
 
 
@@ -1238,8 +1238,8 @@ void UARTSendString(const char* str, const uint8_t max_length) {
 
 
 
-uint8_t UARTDataReady() {
-    return PIR1bits.RCIF;
+short UARTDataReady(void) {
+    return PIR1bits.RCIF ? 1 : 0;
 }
 
 

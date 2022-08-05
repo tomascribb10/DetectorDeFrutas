@@ -125,7 +125,7 @@ void UARTSendString(const char* str, const uint8_t max_length);
  * Determines whether a new data is available to read
  * @return 
  */
-uint8_t UARTDataReady();
+short UARTDataReady();
 
 /**
  * Read one character
