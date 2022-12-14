@@ -1,0 +1,357 @@
+[p GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"28 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"51 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\main.c
+[v _init init `(v  1 e 1 0 ]
+"87
+[v _main main `(v  1 e 1 0 ]
+"213
+[v _TMR0_ISR TMR0_ISR `II(v  1 e 1 0 ]
+"16 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\servo.c
+[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
+"15 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\UART.c
+[v _UARTInit UARTInit `(v  1 e 1 0 ]
+"50
+[v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
+"60
+[v _UARTSendString UARTSendString `(v  1 e 1 0 ]
+"71
+[v _UARTDataReady UARTDataReady `(s  1 e 2 0 ]
+"79
+[v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
+"60 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+[s S353 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"184
+[u S362 . 1 `S353 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES362  1 e 1 @5 ]
+"229
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S321 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S330 . 1 `S321 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES330  1 e 1 @6 ]
+"311
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S169 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"334
+[s S178 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S183 . 1 `S169 1 . 1 0 `S178 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES183  1 e 1 @11 ]
+[s S94 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"406
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES103  1 e 1 @12 ]
+"453
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"460
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"467
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+[s S236 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"486
+[s S242 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S246 . 1 `S236 1 . 1 0 `S242 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES246  1 e 1 @16 ]
+"611
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"618
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @22 ]
+"625
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+[s S44 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"704
+[s S53 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADDEN 1 0 :1:3 
+]
+[u S56 . 1 `S44 1 . 1 0 `S53 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES56  1 e 1 @24 ]
+"754
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"761
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+[s S260 . 1 `uc 1 CM 1 0 :3:0 
+`uc 1 CIS 1 0 :1:3 
+`uc 1 C1INV 1 0 :1:4 
+`uc 1 C2INV 1 0 :1:5 
+`uc 1 C1OUT 1 0 :1:6 
+`uc 1 C2OUT 1 0 :1:7 
+]
+"788
+[s S267 . 1 `uc 1 CM0 1 0 :1:0 
+`uc 1 CM1 1 0 :1:1 
+`uc 1 CM2 1 0 :1:2 
+]
+[u S271 . 1 `S260 1 . 1 0 `S267 1 . 1 0 ]
+[v _CMCONbits CMCONbits `VES271  1 e 1 @31 ]
+[s S476 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"858
+[s S483 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S487 . 1 `S476 1 . 1 0 `S483 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES487  1 e 1 @129 ]
+[s S286 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"925
+[u S295 . 1 `S286 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES295  1 e 1 @133 ]
+[s S72 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"987
+[u S81 . 1 `S72 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES81  1 e 1 @134 ]
+[s S201 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 EEIE 1 0 :1:7 
+]
+"1049
+[u S210 . 1 `S201 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES210  1 e 1 @140 ]
+[s S23 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"1162
+[u S32 . 1 `S23 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES32  1 e 1 @152 ]
+"1202
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"43 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\main.c
+[v _valor_pasos valor_pasos `ui  1 e 2 0 ]
+"44
+[v _frecuencia frecuencia `ui  1 e 2 0 ]
+"45
+[v _in in `ui  1 e 2 0 ]
+"46
+[v _periodo periodo `f  1 e 3 0 ]
+"47
+[v _cont_sr cont_sr `ui  1 e 2 0 ]
+"87
+[v _main main `(v  1 e 1 0 ]
+{
+"91
+[v main@letra letra `uc  1 a 1 33 ]
+"210
+} 0
+"51
+[v _init init `(v  1 e 1 0 ]
+{
+"85
+} 0
+"15 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\UART.c
+[v _UARTInit UARTInit `(v  1 e 1 0 ]
+{
+[v UARTInit@baud_rate baud_rate `DCul  1 p 4 6 ]
+[v UARTInit@BRGH BRGH `DCuc  1 p 1 10 ]
+"44
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 1 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 2 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 6 ]
+"30
+} 0
+"28 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 0 ]
+"31
+} 0
+"44 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 25 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 29 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 24 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 16 ]
+"73
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 15 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 19 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 18 ]
+[v ___ftmul@exp exp `uc  1 a 1 14 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 4 ]
+[v ___ftmul@f2 f2 `f  1 p 3 7 ]
+"157
+} 0
+"56 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 11 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 15 ]
+[v ___ftdiv@exp exp `uc  1 a 1 14 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 10 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 0 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 3 ]
+"86
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 2 ]
+[v ___ftpack@exp exp `uc  1 p 1 5 ]
+[v ___ftpack@sign sign `uc  1 p 1 6 ]
+"86
+} 0
+"60 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\UART.c
+[v _UARTSendString UARTSendString `(v  1 e 1 0 ]
+{
+[v UARTSendString@str str `*.24DCuc  1 a 1 wreg ]
+"61
+[v UARTSendString@i i `i  1 a 2 6 ]
+"60
+[v UARTSendString@str str `*.24DCuc  1 a 1 wreg ]
+[v UARTSendString@max_length max_length `DCuc  1 p 1 3 ]
+[v UARTSendString@str str `*.24DCuc  1 a 1 5 ]
+"65
+} 0
+"50
+[v _UARTSendChar UARTSendChar `(v  1 e 1 0 ]
+{
+[v UARTSendChar@c c `DCuc  1 a 1 wreg ]
+[v UARTSendChar@c c `DCuc  1 a 1 wreg ]
+[v UARTSendChar@c c `DCuc  1 a 1 2 ]
+"53
+} 0
+"79
+[v _UARTReadChar UARTReadChar `(uc  1 e 1 0 ]
+{
+"82
+} 0
+"71
+[v _UARTDataReady UARTDataReady `(s  1 e 2 0 ]
+{
+"73
+} 0
+"16 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\servo.c
+[v _Servo_Init Servo_Init `(v  1 e 1 0 ]
+{
+"72
+} 0
+"213 C:\SanJose\DetectorDeFrutas\MPLABXProjects\DetectoDeFrutasVer3.X\main.c
+[v _TMR0_ISR TMR0_ISR `II(v  1 e 1 0 ]
+{
+"270
+} 0

@@ -35,9 +35,12 @@ void UARTInit(const uint32_t baud_rate, const uint8_t BRGH) {
     RCSTAbits.FERR = 0;     // Disable framing error
     RCSTAbits.OERR = 0;     // Disable overrun error
     
-    // Set up direction of RX/TX pins
-    UART_TRIS_RX = 1;
-    UART_TRIS_TX = 1;
+    // Bit SPEN (RCSTA<7>) and bits TRISB<2:1> have to be
+    // set in order to configure pins RB2/TX/CK and RB1/RX/DT
+    // as the /Universal Synchronous Asynchronous Receiver
+    //Transmitter. 
+    UART_TRIS_RX = 1; // En 1 para habilitar el USART
+    UART_TRIS_TX = 1; // En 1 para habilitar el USART 
 }
 
 /**

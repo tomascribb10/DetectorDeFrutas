@@ -1,0 +1,746 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+idloc IDLOC 5 2000 2000 4 2 1
+reset_vec CODE 0 0 0 1 2 1
+end_init CODE 0 A A 1 2 1
+config CONFIG 4 2007 2007 1 2 1
+$dist/default/production\PruebaCCP.X.production.o
+cinit CODE 0 B B 7 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+text1 CODE 0 199 199 A3 2 1
+text2 CODE 0 4A2 4A2 34 2 1
+text3 CODE 0 42C 42C 3C 2 1
+text4 CODE 0 555 555 16 2 1
+text5 CODE 0 343 343 7D 2 1
+text6 CODE 0 12 12 D1 2 1
+text7 CODE 0 E3 E3 B6 2 1
+text8 CODE 0 3C0 3C0 6C 2 1
+text9 CODE 0 521 521 1A 2 1
+text10 CODE 0 4D6 4D6 2F 2 1
+text11 CODE 0 23C 23C 86 2 1
+text12 CODE 0 468 468 3A 2 1
+text13 CODE 0 59F 59F 5 2 1
+text14 CODE 0 56B 56B 16 2 1
+text15 CODE 0 53B 53B 1A 2 1
+text16 CODE 0 581 581 16 2 1
+maintext CODE 0 2C2 2C2 81 2 1
+cstackCOMMON COMMON 1 70 70 C 1 1
+cstackBANK0 BANK0 1 20 20 20 1 1
+intentry CODE 0 4 4 6 2 1
+bssBANK0 BANK0 1 40 40 1D 1 1
+strings STRING 0 505 505 1C 2 1
+clrtext CODE 0 597 597 8 2 1
+config CONFIG 4 2007 2007 1 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 5D-6F 1
+RAM A0-EF 1
+RAM 120-14F 1
+BANK0 5D-6F 1
+BANK1 A0-EF 1
+BANK2 120-14F 1
+CONST 1-3 2
+CONST 5A4-7FF 2
+ENTRY 1-3 2
+ENTRY 5A4-7FF 2
+CODE 1-3 2
+CODE 5A4-7FF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-1EF 1
+COMMON 7C-7D 1
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 5A4-7FF 2
+STRING 1-3 2
+STRING 5A4-7FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\PruebaCCP.X.production.o
+B cinit CODE >443:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+B cinit CODE >446:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+B cinit CODE >484:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+C cinit CODE >485:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+D cinit CODE >486:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+E cinit CODE >487:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+F cinit CODE >488:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+10 cinit CODE >494:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+10 cinit CODE >496:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+11 cinit CODE >497:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+4 intentry CODE >61:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+581 text16 CODE >61:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+581 text16 CODE >63:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+585 text16 CODE >65:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+589 text16 CODE >66:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+58A text16 CODE >67:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+58B text16 CODE >70:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+58F text16 CODE >71:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+590 text16 CODE >73:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+53B text15 CODE >3:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+53C text15 CODE >5:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+545 text15 CODE >6:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+54A text15 CODE >7:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+54F text15 CODE >8:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+554 text15 CODE >9:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+56B text14 CODE >11:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+56C text14 CODE >13:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+56F text14 CODE >14:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+571 text14 CODE >15:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+574 text14 CODE >16:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+57D text14 CODE >17:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+580 text14 CODE >18:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+59F text13 CODE >20:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+59F text13 CODE >22:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+5A1 text13 CODE >23:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+5A3 text13 CODE >24:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+468 text12 CODE >63:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+468 text12 CODE >65:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+46B text12 CODE >66:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+46C text12 CODE >67:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+46D text12 CODE >68:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+46E text12 CODE >69:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+46F text12 CODE >70:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+470 text12 CODE >71:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+472 text12 CODE >72:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+47B text12 CODE >73:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+47D text12 CODE >74:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+485 text12 CODE >75:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+487 text12 CODE >76:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+490 text12 CODE >77:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+492 text12 CODE >78:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+494 text12 CODE >79:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+496 text12 CODE >80:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+498 text12 CODE >81:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+49A text12 CODE >82:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+49C text12 CODE >83:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+49E text12 CODE >84:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4A0 text12 CODE >85:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4A1 text12 CODE >86:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+23C text11 CODE >26:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+23F text11 CODE >29:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+242 text11 CODE >31:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+247 text11 CODE >32:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+24A text11 CODE >32:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+24D text11 CODE >32:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+253 text11 CODE >33:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+258 text11 CODE >34:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+25A text11 CODE >35:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+25E text11 CODE >36:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+25F text11 CODE >37:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+263 text11 CODE >39:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+268 text11 CODE >40:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+26B text11 CODE >40:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+26E text11 CODE >40:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+274 text11 CODE >41:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+279 text11 CODE >42:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+27B text11 CODE >43:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+27F text11 CODE >44:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+280 text11 CODE >45:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+284 text11 CODE >47:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+289 text11 CODE >48:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+28C text11 CODE >48:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+28F text11 CODE >48:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+295 text11 CODE >49:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+29A text11 CODE >50:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+29C text11 CODE >51:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2A0 text11 CODE >52:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2A1 text11 CODE >53:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2A5 text11 CODE >55:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2AA text11 CODE >56:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2AD text11 CODE >56:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2B0 text11 CODE >56:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2B6 text11 CODE >57:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2BB text11 CODE >58:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+2BD text11 CODE >59:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4D6 text10 CODE >88:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4D7 text10 CODE >91:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4DC text10 CODE >92:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4E1 text10 CODE >93:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4E4 text10 CODE >94:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4E7 text10 CODE >94:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4EA text10 CODE >94:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4EE text10 CODE >95:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4F1 text10 CODE >96:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4F5 text10 CODE >97:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4F8 text10 CODE >98:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4FA text10 CODE >99:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+4FD text10 CODE >100:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+501 text10 CODE >101:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+504 text10 CODE >102:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+521 text9 CODE >104:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+522 text9 CODE >107:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+524 text9 CODE >108:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+536 text9 CODE >108:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+3C0 text8 CODE >62:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3C0 text8 CODE >64:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3C6 text8 CODE >64:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3C8 text8 CODE >65:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3CF text8 CODE >67:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3D3 text8 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3D4 text8 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3D9 text8 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3DB text8 CODE >66:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3E0 text8 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3E4 text8 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3E7 text8 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3EB text8 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3EE text8 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3EF text8 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3F4 text8 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3F6 text8 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3F6 text8 CODE >74:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3FB text8 CODE >75:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3FD text8 CODE >75:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+3FF text8 CODE >76:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+401 text8 CODE >77:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+402 text8 CODE >77:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+407 text8 CODE >77:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+409 text8 CODE >75:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+40B text8 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+40D text8 CODE >80:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+413 text8 CODE >81:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+415 text8 CODE >82:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+41A text8 CODE >82:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+41F text8 CODE >82:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+427 text8 CODE >83:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+42A text8 CODE >84:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+42B text8 CODE >86:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+E3 text7 CODE >56:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+E3 text7 CODE >63:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+EB text7 CODE >63:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+F4 text7 CODE >64:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+FB text7 CODE >65:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+101 text7 CODE >65:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+10A text7 CODE >66:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+111 text7 CODE >67:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+117 text7 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+11C text7 CODE >69:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+123 text7 CODE >69:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+128 text7 CODE >69:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+12E text7 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+135 text7 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+13A text7 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+140 text7 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+144 text7 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+145 text7 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+14B text7 CODE >74:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+14C text7 CODE >75:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+152 text7 CODE >76:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+156 text7 CODE >78:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+157 text7 CODE >78:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+15C text7 CODE >78:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+15E text7 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+160 text7 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+164 text7 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+168 text7 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+16A text7 CODE >80:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+16D text7 CODE >80:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+171 text7 CODE >80:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+174 text7 CODE >81:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+175 text7 CODE >83:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+176 text7 CODE >83:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+17B text7 CODE >83:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+17D text7 CODE >84:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+181 text7 CODE >85:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+198 text7 CODE >86:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+12 text6 CODE >62:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+12 text6 CODE >67:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+1A text6 CODE >67:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+23 text6 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+2A text6 CODE >69:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+30 text6 CODE >69:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+39 text6 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+40 text6 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+45 text6 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+4C text6 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+51 text6 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+57 text6 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+5E text6 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+63 text6 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+69 text6 CODE >74:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+6D text6 CODE >75:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+6E text6 CODE >77:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+6F text6 CODE >78:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+75 text6 CODE >79:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+7B text6 CODE >134:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+7F text6 CODE >136:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+81 text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+84 text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+85 text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+87 text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+8A text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+8B text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+8D text6 CODE >137:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+8F text6 CODE >138:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+90 text6 CODE >138:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+95 text6 CODE >138:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+97 text6 CODE >139:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+98 text6 CODE >139:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+9D text6 CODE >139:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+9F text6 CODE >140:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+A3 text6 CODE >143:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+A7 text6 CODE >145:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+A9 text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+AC text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+AD text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+AF text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+B2 text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+B3 text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+B5 text6 CODE >146:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+B7 text6 CODE >147:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+B8 text6 CODE >147:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+BD text6 CODE >147:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+BF text6 CODE >148:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+C0 text6 CODE >148:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+C5 text6 CODE >148:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+C7 text6 CODE >149:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+CB text6 CODE >156:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+E2 text6 CODE >157:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+343 text5 CODE >44:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+343 text5 CODE >49:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+34B text5 CODE >49:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+354 text5 CODE >50:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+35D text5 CODE >51:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+364 text5 CODE >51:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+369 text5 CODE >51:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+36F text5 CODE >52:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+370 text5 CODE >53:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+376 text5 CODE >54:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+37D text5 CODE >55:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+37F text5 CODE >56:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+381 text5 CODE >57:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+384 text5 CODE >57:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+386 text5 CODE >60:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+387 text5 CODE >60:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+38D text5 CODE >60:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+38F text5 CODE >61:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+396 text5 CODE >63:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+398 text5 CODE >63:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+39A text5 CODE >65:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+39A text5 CODE >68:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+39D text5 CODE >66:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+39F text5 CODE >66:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3A6 text5 CODE >67:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3A8 text5 CODE >65:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3A9 text5 CODE >70:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3AC text5 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3B1 text5 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3B3 text5 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3B5 text5 CODE >71:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3B7 text5 CODE >72:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+3BF text5 CODE >73:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+555 text4 CODE >28:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+555 text4 CODE >30:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+56A text4 CODE >31:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+42C text3 CODE >5:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+42C text3 CODE >13:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+42E text3 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+432 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+434 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+436 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+437 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+43B text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+43D text3 CODE >18:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+441 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+442 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+443 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+447 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+449 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+44B text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+44F text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+451 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+454 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+457 text3 CODE >24:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+458 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+459 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+45D text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+45F text3 CODE >27:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+463 text3 CODE >29:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+467 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+4A2 text2 CODE >5:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4A2 text2 CODE >12:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4A8 text2 CODE >13:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4AA text2 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4AC text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4AD text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4B1 text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4B3 text2 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4B7 text2 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4B8 text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4BA text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4BE text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4C0 text2 CODE >20:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4C3 text2 CODE >20:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4C6 text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4C7 text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4CB text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4CD text2 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4D1 text2 CODE >24:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+4D5 text2 CODE >25:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+199 text1 CODE >505:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+19C text1 CODE >550:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1A0 text1 CODE >553:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1AC text1 CODE >555:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1B0 text1 CODE >558:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1BB text1 CODE >559:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1BC text1 CODE >565:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1BD text1 CODE >661:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1BE text1 CODE >844:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1C2 text1 CODE >845:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1C3 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1CE text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1D3 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1D6 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1D9 text1 CODE >1312:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1E5 text1 CODE >1331:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1E7 text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1F2 text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1F6 text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+1F8 text1 CODE >1333:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+200 text1 CODE >1498:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+204 text1 CODE >1500:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+20B text1 CODE >1515:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+22B text1 CODE >1550:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+236 text1 CODE >1500:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+237 text1 CODE >1564:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+23B text1 CODE >1567:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+2C2 maintext CODE >25:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2C2 maintext CODE >27:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2C5 maintext CODE >29:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2C6 maintext CODE >30:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2C7 maintext CODE >31:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2C8 maintext CODE >32:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2CB maintext CODE >33:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2CC maintext CODE >34:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2CD maintext CODE >35:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2CE maintext CODE >36:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2D0 maintext CODE >37:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2D1 maintext CODE >38:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2D2 maintext CODE >43:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2D8 maintext CODE >44:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+2F4 maintext CODE >45:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+310 maintext CODE >46:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+312 maintext CODE >49:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+313 maintext CODE >50:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+317 maintext CODE >52:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+323 maintext CODE >53:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+325 maintext CODE >54:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+329 maintext CODE >55:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+335 maintext CODE >56:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+337 maintext CODE >57:C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+597 clrtext CODE >471:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+597 clrtext CODE >472:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+598 clrtext CODE >473:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+598 clrtext CODE >474:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+599 clrtext CODE >475:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+59A clrtext CODE >476:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+59B clrtext CODE >477:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+59C clrtext CODE >478:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+59D clrtext CODE >479:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+59E clrtext CODE >480:C:\Users\tomas\AppData\Local\Temp\xcAs88s.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+___lwmod@counter 7B 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+__Hspace_0 5A4 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+_Lcd_Init 8D0 0 CODE 0 text12 dist/default/production\PruebaCCP.X.production.o
+_Lcd_Port A76 0 CODE 0 text15 dist/default/production\PruebaCCP.X.production.o
+___ftdiv@exp 2E 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+_T1CONbits 10 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_in 40 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Init 944 0 CODE 0 text12 dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Port AAA 0 CODE 0 text15 dist/default/production\PruebaCCP.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+_main 584 0 CODE 0 maintext dist/default/production\PruebaCCP.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_Lcd_Write_Char 9AC 0 CODE 0 text10 dist/default/production\PruebaCCP.X.production.o
+start 14 0 CODE 0 init C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+Lcd_Port@a 72 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+Lcd_Write_Char@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___ftdiv@f1 23 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftdiv@f2 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftdiv@f3 2B 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+wtemp0 7E 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+___ftmul@f1 23 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftmul@f2 26 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Write_Char A0A 0 CODE 0 text10 dist/default/production\PruebaCCP.X.production.o
+_CCPR1H 16 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_CCPR1L 15 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+___fttol@f1 30 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+___lwmod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of___ftdiv 332 0 CODE 0 text7 dist/default/production\PruebaCCP.X.production.o
+__end_of___ftmul 1C6 0 CODE 0 text6 dist/default/production\PruebaCCP.X.production.o
+__end_of___fttol 780 0 CODE 0 text5 dist/default/production\PruebaCCP.X.production.o
+__end_of___lwdiv 8D0 0 CODE 0 text3 dist/default/production\PruebaCCP.X.production.o
+__end_of___lwmod 9AC 0 CODE 0 text2 dist/default/production\PruebaCCP.X.production.o
+_valor_pasos 44 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+___stacklo 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+_dpowers A16 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+___lwdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+Lcd_Set_Cursor@temp 23 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___lwmod@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+start_initialization 16 0 CODE 0 cinit dist/default/production\PruebaCCP.X.production.o
+_TRISBbits 86 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_Lcd_Write_String A42 0 CODE 0 text9 dist/default/production\PruebaCCP.X.production.o
+clear_ram0 B2E 0 CODE 0 clrtext dist/default/production\PruebaCCP.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___fttol@exp1 3D 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___fttol@lval 39 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftpack 780 0 CODE 0 text8 dist/default/production\PruebaCCP.X.production.o
+___ftpack@arg 72 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___ftpack@exp 75 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+__end_of___ftpack 858 0 CODE 0 text8 dist/default/production\PruebaCCP.X.production.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 24 0 CODE 0 cinit -
+__Hidloc 4008 0 IDLOC 5 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase A14 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+___lwdiv@counter 79 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+__end_of_sprintf 478 0 CODE 0 text1 dist/default/production\PruebaCCP.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+___lwtoft AAA 0 CODE 0 text4 dist/default/production\PruebaCCP.X.production.o
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit 16 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 5 idloc -
+__Lstack 0 0 STACK 2 stack -
+__end_of___lwtoft AD6 0 CODE 0 text4 dist/default/production\PruebaCCP.X.production.o
+_PORTBbits 6 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_INTCONbits B 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 14 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 14 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 5A4 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_buffer 46 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+sprintf@val 2C 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Write_String A76 0 CODE 0 text9 dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Clear B48 0 CODE 0 text13 dist/default/production\PruebaCCP.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab A0A 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+Lcd_Write_String@a 7A 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+Lcd_Write_String@i 78 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\tomas\AppData\Local\Temp\xcAs88s.o
+__end_of_Lcd_Cmd B02 0 CODE 0 text14 dist/default/production\PruebaCCP.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_PIE1bits 8C 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+sprintf@flag 2A 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+sprintf@prec 2E 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__ptext10 9AC 0 CODE 0 text10 dist/default/production\PruebaCCP.X.production.o
+__ptext11 478 0 CODE 0 text11 dist/default/production\PruebaCCP.X.production.o
+__ptext12 8D0 0 CODE 0 text12 dist/default/production\PruebaCCP.X.production.o
+__ptext13 B3E 0 CODE 0 text13 dist/default/production\PruebaCCP.X.production.o
+__ptext14 AD6 0 CODE 0 text14 dist/default/production\PruebaCCP.X.production.o
+__ptext15 A76 0 CODE 0 text15 dist/default/production\PruebaCCP.X.production.o
+__ptext16 B02 0 CODE 0 text16 dist/default/production\PruebaCCP.X.production.o
+_Lcd_Clear B3E 0 CODE 0 text13 dist/default/production\PruebaCCP.X.production.o
+_Lcd_Set_Cursor 478 0 CODE 0 text11 dist/default/production\PruebaCCP.X.production.o
+___ftdiv 1C6 0 CODE 0 text7 dist/default/production\PruebaCCP.X.production.o
+___ftmul 24 0 CODE 0 text6 dist/default/production\PruebaCCP.X.production.o
+___fttol 686 0 CODE 0 text5 dist/default/production\PruebaCCP.X.production.o
+___lwdiv 858 0 CODE 0 text3 dist/default/production\PruebaCCP.X.production.o
+___lwmod 944 0 CODE 0 text2 dist/default/production\PruebaCCP.X.production.o
+__pmaintext 584 0 CODE 0 maintext dist/default/production\PruebaCCP.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+?___ftpack 72 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___lwdiv@divisor 72 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___lwtoft@c 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+?___lwtoft 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of__stringtab A16 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+___ftmul@cntr 31 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftmul@sign 32 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+_PIR1bits C 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+__Lend_init 14 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 20 0 CODE 0 cinit dist/default/production\PruebaCCP.X.production.o
+__end_of_Lcd_Set_Cursor 584 0 CODE 0 text11 dist/default/production\PruebaCCP.X.production.o
+__Hintentry 14 0 CODE 0 intentry -
+Lcd_Set_Cursor@a 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+Lcd_Set_Cursor@b 76 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+Lcd_Set_Cursor@y 22 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+Lcd_Set_Cursor@z 21 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Lstrings 0 0 ABS 0 strings -
+___lwdiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+?___ftdiv 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+?___ftmul 23 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+?___fttol 30 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+?___lwdiv 72 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+?___lwmod 20 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 332 0 CODE 0 text1 dist/default/production\PruebaCCP.X.production.o
+__ptext2 944 0 CODE 0 text2 dist/default/production\PruebaCCP.X.production.o
+__ptext3 858 0 CODE 0 text3 dist/default/production\PruebaCCP.X.production.o
+__ptext4 AAA 0 CODE 0 text4 dist/default/production\PruebaCCP.X.production.o
+__ptext5 686 0 CODE 0 text5 dist/default/production\PruebaCCP.X.production.o
+__ptext6 24 0 CODE 0 text6 dist/default/production\PruebaCCP.X.production.o
+__ptext7 1C6 0 CODE 0 text7 dist/default/production\PruebaCCP.X.production.o
+__ptext8 780 0 CODE 0 text8 dist/default/production\PruebaCCP.X.production.o
+__ptext9 A42 0 CODE 0 text9 dist/default/production\PruebaCCP.X.production.o
+_periodo 5A 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+_sprintf 332 0 CODE 0 text1 dist/default/production\PruebaCCP.X.production.o
+_INT_CCP1 B02 0 CODE 0 text16 dist/default/production\PruebaCCP.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+sprintf@ap 2B 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+sprintf@sp 2F 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of_INT_CCP1 B2E 0 CODE 0 text16 dist/default/production\PruebaCCP.X.production.o
+___ftmul@exp 2D 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of__initialization 20 0 CODE 0 cinit dist/default/production\PruebaCCP.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+Lcd_Cmd@a 75 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+___ftpack@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___ftdiv@cntr 2A 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+___ftdiv@sign 2F 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__Hend_init 16 0 CODE 0 end_init -
+sprintf@c 30 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+sprintf@f 24 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+__end_of_main 686 0 CODE 0 maintext dist/default/production\PruebaCCP.X.production.o
+__end_of_dpowers A2A 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+?_sprintf 24 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+_T1CON 10 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_TMR1H F 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+_TMR1L E 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\PruebaCCP.X.production.o
+_CCP1CON 17 0 ABS 0 - dist/default/production\PruebaCCP.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\PruebaCCP.X.production.o
+___fttol@sign1 38 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+_Lcd_Cmd AD6 0 CODE 0 text14 dist/default/production\PruebaCCP.X.production.o
+__initialization 16 0 CODE 0 cinit dist/default/production\PruebaCCP.X.production.o
+__pbssBANK0 40 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+_frecuencia 42 0 BANK0 1 bssBANK0 dist/default/production\PruebaCCP.X.production.o
+__pstrings A0A 0 STRING 0 strings dist/default/production\PruebaCCP.X.production.o
+Lcd_Write_Char@a 76 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+Lcd_Write_Char@y 75 0 COMMON 1 cstackCOMMON dist/default/production\PruebaCCP.X.production.o
+___ftmul@f3_as_product 2E 0 BANK0 1 cstackBANK0 dist/default/production\PruebaCCP.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text9 0 521 A42 83 2
+cstackCOMMON 1 70 70 C 1
+cstackBANK0 1 20 20 3D 1
+intentry 0 4 8 501 2
+reset_vec 0 0 0 1 2
+strings 0 505 A0A 1C 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

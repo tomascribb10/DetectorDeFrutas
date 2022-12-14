@@ -1284,27 +1284,37 @@ char UARTReadChar();
 uint8_t UARTReadString(char *buf, uint8_t max_length);
 # 35 "main.c" 2
 
+# 1 "./servo.h" 1
+# 40 "./servo.h"
+void Servo_Init(void);
+# 71 "./servo.h"
+void Servo_8_Write(unsigned char ang);
+# 36 "main.c" 2
+
 
 
 
 
 
 void init() {
-
-
-
-
-
-
-
+# 52 "main.c"
     CMCONbits.CM0 = 1;
     CMCONbits.CM1 = 1;
     CMCONbits.CM2 = 1;
 
 
-    TRISBbits.TRISB1 = 0;
-    TRISA = 0x00;
-    PORTA = 0;
+
+
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+
+    TRISBbits.TRISB3 = 0;
+    TRISBbits.TRISB4 = 0;
+    TRISBbits.TRISB5 = 0;
+    TRISBbits.TRISB6 = 0;
+    PORTB = 0;
 
     UARTInit(9600, 1);
 }
@@ -1315,43 +1325,84 @@ void main(void) {
     int nRead = 0;
     char letra;
     init();
-    PORTAbits.RA0 = 1;
-    PORTAbits.RA1 = 0;
-    PORTAbits.RA2 = 1;
-    UARTSendString("TOM> \0", 16);
+    PORTBbits.RB3 = 1;
+    PORTBbits.RB4 = 1;
+    PORTBbits.RB5 = 1;
+    PORTBbits.RB6 = 1;
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+    PORTBbits.RB3 = 0;
+    PORTBbits.RB4 = 0;
+    PORTBbits.RB5 = 0;
+    PORTBbits.RB6 = 0;
 
+    int detect_on = 0;
+    Servo_Init();
+    int contador = 0;
+
+    PORTBbits.RB6 = 1;
     while (1) {
+
+        if(PORTAbits.RA3 == 1 && detect_on == 0 ){
+            PORTBbits.RB6 = 0;
+
+            UARTSendString("x\0", 16);
+            detect_on = 1;
+        }
+# 124 "main.c"
+        if(PORTAbits.RA0 == 1){
+            PORTBbits.RB3 = 0;
+        }
+        if(PORTAbits.RA1 == 1){
+            PORTBbits.RB4 = 0;
+        }
+        if(PORTAbits.RA2 == 1){
+            PORTBbits.RB5 = 0;
+        }
+
         if(UARTDataReady() > 0){
-# 88 "main.c"
+# 149 "main.c"
             letra = UARTReadChar();
 
             switch (letra){
                 case 'a':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA0 = 1;
+
+                    PORTBbits.RB3 = 1;
+                    Servo_8_Write(0);
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'b':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA0 = 0;
+
+                    PORTBbits.RB3 = 0;
                     break;
                 case 'c':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA1 = 1;
+
+                    PORTBbits.RB4 = 1;
+                    Servo_8_Write(90);
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'd':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA1 = 0;
+
+                    PORTBbits.RB4 = 0;
                     break;
                 case 'e':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA2 = 1;
+
+                    PORTBbits.RB5 = 1;
+                    Servo_8_Write(180);
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'f':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA2 = 0;
+
+                    PORTBbits.RB5 = 0;
                     break;
             }
         }
+
     }
 
     return;

@@ -3,6 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>DetectoDeFrutasVer3</name>
             <name>USARTRX</name>
             <creation-uuid>3dec4d84-968e-4e80-90fb-60fc46ef4570</creation-uuid>
             <make-project-type>0</make-project-type>

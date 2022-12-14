@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\USARTRX.X.production.hex">
+  <executable name="dist/default/production\DetectoDeFrutasVer3.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>2048</length>
-      <used>480</used>
-      <free>1568</free>
+      <used>1362</used>
+      <free>686</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>224</length>
-      <used>28</used>
-      <free>196</free>
+      <used>65</used>
+      <free>159</free>
     </memory>
   </executable>
 </project>

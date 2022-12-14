@@ -11,15 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
+$C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 1 2 1
 config CONFIG 4 2007 2007 1 2 1
 $dist/default/production\Practica1.X.production.o
 cinit CODE 0 7FE 7FE 2 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-maintext CODE 0 7D4 7D4 2A 2 1
-cstackCOMMON COMMON 1 70 70 3 1 1
+maintext CODE 0 72C 72C D2 2 1
+cstackCOMMON COMMON 1 70 70 2 1 1
 config CONFIG 4 2007 2007 1 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -33,17 +33,17 @@ RAM 120-14F 1
 BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 120-14F 1
-CONST 1-7D3 2
-ENTRY 1-7D3 2
-CODE 1-7D3 2
+CONST 1-72B 2
+ENTRY 1-72B 2
+CODE 1-72B 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
 SFR3 180-1EF 1
-COMMON 73-7D 1
+COMMON 72-7D 1
 EEDATA 2100-217F 2
-STRCODE 1-7D3 2
-STRING 1-7D3 2
+STRCODE 1-72B 2
+STRING 1-72B 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -58,19 +58,116 @@ STRING 1-7D3 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Practica1.X.production.o
-7FE cinit CODE >264:C:\Users\tomas\AppData\Local\Temp\xcAsja0.s
-7FE cinit CODE >267:C:\Users\tomas\AppData\Local\Temp\xcAsja0.s
-7FE cinit CODE >273:C:\Users\tomas\AppData\Local\Temp\xcAsja0.s
-7FE cinit CODE >275:C:\Users\tomas\AppData\Local\Temp\xcAsja0.s
-7FF cinit CODE >276:C:\Users\tomas\AppData\Local\Temp\xcAsja0.s
-7D4 maintext CODE >21:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7D4 maintext CODE >22:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7D8 maintext CODE >24:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7DB maintext CODE >25:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7DC maintext CODE >27:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7DF maintext CODE >28:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7EC maintext CODE >29:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
-7EF maintext CODE >30:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7FE cinit CODE >280:C:\Users\tomas\AppData\Local\Temp\xcAs5hs.s
+7FE cinit CODE >283:C:\Users\tomas\AppData\Local\Temp\xcAs5hs.s
+7FE cinit CODE >289:C:\Users\tomas\AppData\Local\Temp\xcAs5hs.s
+7FE cinit CODE >291:C:\Users\tomas\AppData\Local\Temp\xcAs5hs.s
+7FF cinit CODE >292:C:\Users\tomas\AppData\Local\Temp\xcAs5hs.s
+72C maintext CODE >17:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+72C maintext CODE >20:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+72E maintext CODE >23:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+731 maintext CODE >24:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+732 maintext CODE >25:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+733 maintext CODE >27:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+734 maintext CODE >28:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+735 maintext CODE >29:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+736 maintext CODE >42:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+737 maintext CODE >43:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+738 maintext CODE >44:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+739 maintext CODE >45:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+73A maintext CODE >46:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+73B maintext CODE >47:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+73C maintext CODE >48:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+73F maintext CODE >248:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+741 maintext CODE >253:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+756 maintext CODE >255:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+759 maintext CODE >256:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+75A maintext CODE >257:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+75B maintext CODE >258:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+75B maintext CODE >263:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+75F maintext CODE >266:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+760 maintext CODE >267:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+764 maintext CODE >267:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+768 maintext CODE >268:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+768 maintext CODE >270:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+76F maintext CODE >273:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+771 maintext CODE >280:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+77A maintext CODE >280:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+77E maintext CODE >280:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+782 maintext CODE >285:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+785 maintext CODE >287:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+786 maintext CODE >288:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+787 maintext CODE >289:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+788 maintext CODE >290:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+789 maintext CODE >291:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78A maintext CODE >292:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78B maintext CODE >293:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78C maintext CODE >294:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78D maintext CODE >295:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78E maintext CODE >296:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+78F maintext CODE >297:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+790 maintext CODE >298:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+791 maintext CODE >299:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+792 maintext CODE >300:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+793 maintext CODE >301:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+794 maintext CODE >302:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+795 maintext CODE >303:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+796 maintext CODE >305:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+797 maintext CODE >307:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+798 maintext CODE >308:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+799 maintext CODE >309:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+79A maintext CODE >320:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+79F maintext CODE >320:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7A3 maintext CODE >320:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7AC maintext CODE >320:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7B0 maintext CODE >320:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7B4 maintext CODE >325:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7B7 maintext CODE >327:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7B8 maintext CODE >328:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7B9 maintext CODE >329:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BA maintext CODE >330:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BB maintext CODE >331:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BC maintext CODE >332:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BD maintext CODE >333:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BE maintext CODE >334:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7BF maintext CODE >335:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C0 maintext CODE >336:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C1 maintext CODE >337:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C2 maintext CODE >338:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C3 maintext CODE >339:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C4 maintext CODE >340:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C5 maintext CODE >341:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C6 maintext CODE >342:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C7 maintext CODE >344:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C8 maintext CODE >346:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7C9 maintext CODE >347:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7CA maintext CODE >348:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7CB maintext CODE >354:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7D0 maintext CODE >354:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7D4 maintext CODE >354:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7DD maintext CODE >354:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7E1 maintext CODE >354:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7E5 maintext CODE >359:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7E8 maintext CODE >361:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7E9 maintext CODE >362:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7EA maintext CODE >363:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7EB maintext CODE >364:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7EC maintext CODE >365:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7ED maintext CODE >366:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7EE maintext CODE >367:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7EF maintext CODE >368:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F0 maintext CODE >369:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F1 maintext CODE >370:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F2 maintext CODE >371:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F3 maintext CODE >372:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F4 maintext CODE >373:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F5 maintext CODE >374:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F6 maintext CODE >375:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F7 maintext CODE >376:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F8 maintext CODE >378:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7F9 maintext CODE >380:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7FA maintext CODE >381:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
+7FB maintext CODE >382:C:\SanJose\DetectorDeFrutas\MPLABXProjects\Practica1.X\prac1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -85,31 +182,36 @@ $dist/default/production\Practica1.X.production.o
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/production\Practica1.X.production.o
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_1 72 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 400F 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-_main FA8 0 CODE 0 maintext dist/default/production\Practica1.X.production.o
+_T0CS 40D 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_T0IF 5A 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_TMR0 1 0 ABS 0 - dist/default/production\Practica1.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+_main E58 0 CODE 0 maintext dist/default/production\Practica1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Practica1.X.production.o
-start 0 0 CODE 0 init C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
+start 0 0 CODE 0 init C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Practica1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-___stacklo 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
+___stackhi 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+___stacklo 0 0 ABS 0 - C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
 start_initialization FFC 0 CODE 0 cinit dist/default/production\Practica1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
+_TRISAbits 85 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_TRISBbits 86 0 ABS 0 - dist/default/production\Practica1.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -127,6 +229,7 @@ __Lbank3 0 0 BANK3 1 bank3 -
 __Lcinit FFC 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
+_PORTAbits 5 0 ABS 0 - dist/default/production\Practica1.X.production.o
 _PORTBbits 6 0 ABS 0 - dist/default/production\Practica1.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -145,14 +248,19 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_PS0 408 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_PS1 409 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_PS2 40A 0 ABS 0 - dist/default/production\Practica1.X.production.o
+_PSA 40B 0 ABS 0 - dist/default/production\Practica1.X.production.o
 __S0 800 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 72 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\tomas\AppData\Local\Temp\xcAsja0.o
-__pmaintext FA8 0 CODE 0 maintext dist/default/production\Practica1.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\tomas\AppData\Local\Temp\xcAs5hs.o
+__pmaintext E58 0 CODE 0 maintext dist/default/production\Practica1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
+main@cont 70 0 COMMON 1 cstackCOMMON dist/default/production\Practica1.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -174,8 +282,6 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Practica1.X.p
 __Hend_init 2 0 CODE 0 end_init -
 __end_of_main FFC 0 CODE 0 maintext dist/default/production\Practica1.X.production.o
 _CMCON 1F 0 ABS 0 - dist/default/production\Practica1.X.production.o
-_TRISA 85 0 ABS 0 - dist/default/production\Practica1.X.production.o
-_TRISB 86 0 ABS 0 - dist/default/production\Practica1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __initialization FFC 0 CODE 0 cinit dist/default/production\Practica1.X.production.o
@@ -205,8 +311,8 @@ __initialization FFC 0 CODE 0 cinit dist/default/production\Practica1.X.producti
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FE FFC 2 2
-maintext 0 7D4 FA8 2A 2
-cstackCOMMON 1 70 70 3 1
+maintext 0 72C E58 D2 2
+cstackCOMMON 1 70 70 2 1
 reset_vec 0 0 0 1 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

@@ -33,6 +33,7 @@
 #include <stdlib.h>
 
 #include "UART.h"
+#include "servo.h"
 
 #define _XTAL_FREQ  4000000     // System clock frequency
 
@@ -46,14 +47,25 @@ void init() {
     
     //ANSEL = 0x00;               // Set all I/O to digital I/O
     
+    
+    //Apagamos los comparadores de los puertos RA3 y RA4
     CMCONbits.CM0 = 1;
     CMCONbits.CM1 = 1;
     CMCONbits.CM2 = 1;
     
-    // Ports config
-    TRISBbits.TRISB1 = 0;
-    TRISA = 0x00;
-    PORTA = 0;
+    // Ports config Por defecto inician como Entradas (1)
+    //TRISA = 0x00;
+    //PORTA = 0;
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+    
+    TRISBbits.TRISB3 = 0;
+    TRISBbits.TRISB4 = 0;
+    TRISBbits.TRISB5 = 0;
+    TRISBbits.TRISB6 = 0;
+    PORTB = 0;
     
     UARTInit(9600, 1);
 }
@@ -64,12 +76,61 @@ void main(void) {
     int nRead = 0;
     char letra;
     init();
-    PORTAbits.RA0 = 1;
-    PORTAbits.RA1 = 0;
-    PORTAbits.RA2 = 1;
-    UARTSendString("TOM> \0", MAX_LENGTH_UART);
-    //PORTA = 0b00000111;
+    PORTBbits.RB3 = 1;
+    PORTBbits.RB4 = 1;
+    PORTBbits.RB5 = 1;
+    PORTBbits.RB6 = 1;
+    __delay_ms(1000);
+    PORTBbits.RB3 = 0;
+    PORTBbits.RB4 = 0;
+    PORTBbits.RB5 = 0;
+    PORTBbits.RB6 = 0;
+    //UARTSendString("TOM> \0", MAX_LENGTH_UART);
+    int detect_on = 0;
+    Servo_Init();   
+    int contador = 0;
+    //Prendemos el motor
+    PORTBbits.RB6 = 1;
     while (1) {
+        //Prendemos el motor mientras no corte la barrera IR
+        if(PORTAbits.RA3 == 1 && detect_on == 0 ){
+            PORTBbits.RB6 = 0; //detenemos motor
+            //UARTSendChar("x");
+            UARTSendString("x\0", MAX_LENGTH_UART); //iniciamos deteccion
+            detect_on = 1;
+        }
+        
+        ////////
+        /*
+        if (PORTAbits.RA3 == 1){
+            if (contador < 1000){
+                contador++;
+            }            
+        }else{
+            if (contador > 0){
+                contador--;
+            }
+        }
+        if (contador > 1 && detect_on == 0){
+            PORTBbits.RB6 = 1;
+        }else{
+            PORTBbits.RB6 = 0;
+            UARTSendString("x\0", MAX_LENGTH_UART); //iniciamos deteccion
+            detect_on = 1;
+        }
+        */
+        ///////
+        
+        if(PORTAbits.RA0 == 1){
+            PORTBbits.RB3 = 0;
+        }
+        if(PORTAbits.RA1 == 1){
+            PORTBbits.RB4 = 0;
+        }
+        if(PORTAbits.RA2 == 1){
+            PORTBbits.RB5 = 0;
+        }
+        
         if(UARTDataReady() > 0){       // Verifica si ha recibido datos por el puerto serial
             // Send prompt
             //UARTSendString("TOM> \0", MAX_LENGTH_UART);
@@ -89,31 +150,44 @@ void main(void) {
             
             switch (letra){
                 case 'a': 
-                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA0 = 1;
+                    //UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB3 = 1;
+                    Servo_8_Write(0);
+                    UARTSendString("y\0", MAX_LENGTH_UART);
+                    PORTBbits.RB6 = 1; //Arrancamos motor
+                    detect_on = 0;
                     break;
                 case 'b':
-                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA0 = 0;                
+                    //UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB3 = 0;                
                     break;
                 case 'c':    
-                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA1 = 1;
+                    //UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB4 = 1;
+                    Servo_8_Write(90);
+                    UARTSendString("y\0", MAX_LENGTH_UART);
+                    PORTBbits.RB6 = 1; //Arrancamos motor
+                    detect_on = 0;
                     break;
                 case 'd':
-                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA1 = 0;
+                    //UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB4 = 0;
                     break;
                 case 'e':    
-                    UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA2 = 1;  
+                    //UARTSendString("\n\rPrendiendo Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB5 = 1; 
+                    Servo_8_Write(180);
+                    UARTSendString("y\0", MAX_LENGTH_UART);
+                    PORTBbits.RB6 = 1; //Arrancamos motor
+                    detect_on = 0;
                     break;      
                 case 'f':
-                    UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
-                    PORTAbits.RA2 = 0;
+                    //UARTSendString("\n\rApagando Led \0", MAX_LENGTH_UART);
+                    PORTBbits.RB5 = 0;
                     break;             
             }
         }
+        
     }
     
     return;

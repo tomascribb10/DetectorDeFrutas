@@ -1,0 +1,59 @@
+make -f nbproject/Makefile-Config_2.mk SUBPROJECTS= .clean-conf
+make[1]: Entering directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+rm -f  -r .ca/build/Config_2/production
+rm -f  -r .ca/dist/Config_2/production
+make[1]: Leaving directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+[32mCLEAN SUCCESSFUL (total time: 260ms)[0m
+make -f nbproject/Makefile-Config_2.mk SUBPROJECTS= .build-conf
+make[1]: Entering directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+make  -f nbproject/Makefile-Config_2.mk .ca/dist/Config_2/production/DetectoDeFrutasVer3.X.production.hex
+make[2]: Entering directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=16F628A -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_2=Config_2  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_2/production/main.p1 main.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=16F628A -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_2=Config_2  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_2/production/servo.p1 servo.c 
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=16F628A -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_2=Config_2  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_2/production/UART.p1 UART.c 
+::: advisory: (2049) C99 compliant libraries are currently not available for baseline or mid-range devices, or for enhanced mid-range devices using a reentrant stack; using C90 libraries
+::: advisory: (2049) C99 compliant libraries are currently not available for baseline or mid-range devices, or for enhanced mid-range devices using a reentrant stack; using C90 libraries
+::: advisory: (2049) C99 compliant libraries are currently not available for baseline or mid-range devices, or for enhanced mid-range devices using a reentrant stack; using C90 libraries
+servo.c:139:37: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        valor_pasos = (CCPR1H << 8) + CCPR1L;
+                    ~ ~~~~~~~~~~~~~~^~~~~~~~
+servo.c:142:31: warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wconversion]
+        periodo = valor_pasos * 0.000008;
+                ~ ~~~~~~~~~~~~^~~~~~~~~~
+servo.c:143:24: warning: implicit conversion turns floating-point number into integer: 'float' to 'unsigned int' [-Wfloat-conversion]
+        frecuencia = 1 / periodo;
+                   ~ ~~^~~~~~~~~
+3 warnings generated.
+UART.c:18:43: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned char' [-Wconversion]
+        SPBRG = _XTAL_FREQ/(64*baud_rate) - 1;
+              ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+UART.c:21:43: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned char' [-Wconversion]
+        SPBRG = _XTAL_FREQ/(16*baud_rate) - 1;
+              ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+"C:\Program Files\Microchip\xc8\v2.36\bin\xc8-cc.exe"  -mcpu=16F628A -Wl,-Map=.ca/dist/Config_2/production/DetectoDeFrutasVer3.X.production.map  -DXPRJ_Config_2=Config_2  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8"  -fno-short-double -fno-short-float -O2 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto      -Wl,--memorysummary,.ca/dist/Config_2/production/memoryfile.xml -o .ca/dist/Config_2/production/DetectoDeFrutasVer3.X.production.elf  .ca/build/Config_2/production/UART.p1 .ca/build/Config_2/production/main.p1 .ca/build/Config_2/production/servo.p1     
+::: advisory: (2049) C99 compliant libraries are currently not available for baseline or mid-range devices, or for enhanced mid-range devices using a reentrant stack; using C90 libraries
+UART.c:91:: warning: (520) function "_UARTReadString" is never called
+main.c:151:: warning: (1518) direct function call made with an incomplete prototype (UARTDataReady)
+main.c:166:: warning: (1518) direct function call made with an incomplete prototype (UARTReadChar)
+:0:: error: (1347) can't find 0x28 words (0x28 withtotal) for psect "text1" in class "CODE" (largest unused contiguous range 0x17)
+Non line specific message::: advisory: (1493) updated 32-bit floating-point routines might trigger "can't find space" messages appearing after updating to this release; consider using the smaller 24-bit floating-point types
+:0:: error: (1347) can't find 0x26 words (0x26 withtotal) for psect "text4" in class "CODE" (largest unused contiguous range 0x17)
+:0:: error: (1347) can't find 0x23 words (0x23 withtotal) for psect "text16" in class "CODE" (largest unused contiguous range 0x17)
+:0:: error: (1347) can't find 0x21 words (0x21 withtotal) for psect "text10" in class "CODE" (largest unused contiguous range 0x17)
+:0:: error: (1347) can't find 0x1E words (0x1e withtotal) for psect "text9" in class "CODE" (largest unused contiguous range 0x17)
+:0:: error: (1347) can't find 0xE words (0xe withtotal) for psect "text7" in class "CODE" (largest unused contiguous range 0x6)
+:0:: error: (1347) can't find 0x9 words (0x9 withtotal) for psect "strings" in class "STRING" (largest unused contiguous range 0x6)
+:0:: error: (1347) can't find 0x8 words (0x8 withtotal) for psect "clrtext" in class "CODE" (largest unused contiguous range 0x6)
+:0:: error: (1347) can't find 0x8 words (0x8 withtotal) for psect "text6" in class "CODE" (largest unused contiguous range 0x6)
+:0:: error: (1347) can't find 0x7 words (0x7 withtotal) for psect "text5" in class "CODE" (largest unused contiguous range 0x6)
+(908) exit status = 1
+nbproject/Makefile-Config_2.mk:170: recipe for target '.ca/dist/Config_2/production/DetectoDeFrutasVer3.X.production.hex' failed
+make[2]: Leaving directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+nbproject/Makefile-Config_2.mk:91: recipe for target '.build-conf' failed
+make[1]: Leaving directory 'C:/SanJose/DetectorDeFrutas/MPLABXProjects/DetectoDeFrutasVer3.X'
+nbproject/Makefile-impl.mk:39: recipe for target '.build-impl' failed
+[31mmake[2]: *** [.ca/dist/Config_2/production/DetectoDeFrutasVer3.X.production.hex] Error 1
+make[1]: *** [.build-conf] Error 2
+make: *** [.build-impl] Error 2[0m
+[31mBUILD FAILED (exit value 2, total time: 4s)[0m

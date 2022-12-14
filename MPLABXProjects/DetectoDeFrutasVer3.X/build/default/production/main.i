@@ -1284,16 +1284,36 @@ char UARTReadChar();
 uint8_t UARTReadString(char *buf, uint8_t max_length);
 # 35 "main.c" 2
 
+# 1 "./servo.h" 1
+# 40 "./servo.h"
+void Servo_Init(void);
+# 36 "main.c" 2
 
 
 
+
+
+
+
+unsigned int valor_pasos;
+unsigned int frecuencia = 1500;
+unsigned int in;
+float periodo;
+unsigned int cont_sr = 0;
+unsigned char data_s[8];
 
 
 void init() {
 
-
-
-
+    CCP1CON = 0b00000101;
+    T1CON = 0b00000000;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.CCP1IE = 1;
+    PIR1bits.CCP1IF = 0;
+    TMR1L = 0x00;
+    TMR1H = 0x00;
+    T1CONbits.TMR1ON = 1;
 
 
 
@@ -1302,9 +1322,19 @@ void init() {
     CMCONbits.CM2 = 1;
 
 
-    TRISBbits.TRISB1 = 0;
-    TRISA = 0x00;
-    PORTA = 0;
+
+
+    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA1 = 1;
+    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+
+    TRISBbits.TRISB3 = 1;
+    TRISBbits.TRISB4 = 0;
+    TRISBbits.TRISB5 = 0;
+    TRISBbits.TRISB6 = 0;
+    TRISBbits.TRISB7 = 0;
+    PORTB = 0;
 
     UARTInit(9600, 1);
 }
@@ -1315,44 +1345,128 @@ void main(void) {
     int nRead = 0;
     char letra;
     init();
-    PORTAbits.RA0 = 1;
-    PORTAbits.RA1 = 0;
-    PORTAbits.RA2 = 1;
-    UARTSendString("TOM> \0", 16);
 
+    PORTBbits.RB4 = 1;
+    PORTBbits.RB5 = 1;
+    PORTBbits.RB6 = 1;
+    PORTBbits.RB7 = 1;
+    _delay((unsigned long)((1000)*(4000000/4000.0)));
+
+    PORTBbits.RB4 = 0;
+    PORTBbits.RB5 = 0;
+    PORTBbits.RB6 = 0;
+    PORTBbits.RB7 = 0;
+
+    int detect_on = 0;
+    Servo_Init();
+    int contador = 0;
+
+    PORTBbits.RB7 = 1;
     while (1) {
+# 121 "main.c"
+        if(in == 1){
+            periodo = valor_pasos * 0.000001;
+            frecuencia = 1 / periodo;
+            in = 0;
+        }
+
+        if (frecuencia > 1300 ){
+            PORTBbits.RB7 = 0;
+
+            UARTSendString("x\0", 16);
+            detect_on = 1;
+        }else{
+            PORTBbits.RB7 = 1;
+        }
+
+
+
+
+
+        if(PORTAbits.RA0 == 1){
+            PORTBbits.RB7 = 0;
+        }
+        if(PORTAbits.RA1 == 1){
+            PORTBbits.RB4 = 0;
+        }
+        if(PORTAbits.RA2 == 1){
+            PORTBbits.RB5 = 0;
+        }
+
         if(UARTDataReady() > 0){
-# 88 "main.c"
+# 165 "main.c"
             letra = UARTReadChar();
 
             switch (letra){
                 case 'a':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA0 = 1;
+
+                    PORTBbits.RB7 = 1;
+
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'b':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA0 = 0;
+
+                    PORTBbits.RB7 = 0;
                     break;
                 case 'c':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA1 = 1;
+
+                    PORTBbits.RB4 = 1;
+
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'd':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA1 = 0;
+
+                    PORTBbits.RB4 = 0;
                     break;
                 case 'e':
-                    UARTSendString("\n\rPrendiendo Led \0", 16);
-                    PORTAbits.RA2 = 1;
+
+                    PORTBbits.RB5 = 1;
+
+                    UARTSendString("y\0", 16);
+                    PORTBbits.RB6 = 1;
+                    detect_on = 0;
                     break;
                 case 'f':
-                    UARTSendString("\n\rApagando Led \0", 16);
-                    PORTAbits.RA2 = 0;
+
+                    PORTBbits.RB5 = 0;
                     break;
             }
         }
+
     }
 
     return;
+}
+
+
+void __attribute__((picinterrupt(("")))) TMR0_ISR(void)
+{
+
+
+    if(PIR1bits.CCP1IF == 1)
+    {
+        valor_pasos = (CCPR1H << 8) + CCPR1L;
+        TMR1H = 0x00;
+        TMR1L = 0x00;
+
+
+        in = 1;
+        PIR1bits.CCP1IF = 0;
+    }
+
+    if(INTCONbits.T0IF == 1)
+    {
+        cont_sr = cont_sr + 1;
+        if(cont_sr > 41){
+            cont_sr = 0;
+        }
+# 266 "main.c"
+        TMR0 = 5;
+        INTCONbits.T0IF = 0;
+        INTCONbits.T0IE = 1;
+    }
 }

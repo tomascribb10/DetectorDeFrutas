@@ -7,24 +7,6 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "prac1.c" 2
-
-
-
-
-
-#pragma config FOSC = INTOSCIO
-#pragma config WDTE = OFF
-#pragma config PWRTE = ON
-#pragma config MCLRE = OFF
-#pragma config BOREN = ON
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config CP = OFF
-
-
-
-
-
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -1147,20 +1129,183 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 18 "prac1.c" 2
+# 1 "prac1.c" 2
 
 
 
-void main(void) {
-    CMCON = 0x07;
 
-    TRISA = 0x00;
-    TRISB = 0x00;
-    while(1){
-        PORTBbits.RB0 = 1;
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-        PORTBbits.RB0 = 0;
-        _delay((unsigned long)((500)*(4000000/4000.0)));
+#pragma config FOSC = INTOSCIO
+#pragma config WDTE = OFF
+#pragma config PWRTE = ON
+#pragma config MCLRE = OFF
+#pragma config BOREN = ON
+#pragma config LVP = OFF
+#pragma config CPD = OFF
+#pragma config CP = OFF
+
+
+
+
+void main()
+{
+    int cont;
+    cont=0;
+
+
+    TRISAbits.TRISA0=0;
+    TRISAbits.TRISA1=0;
+    TRISAbits.TRISA2=0;
+
+    TRISBbits.TRISB5=0;
+    TRISBbits.TRISB6=0;
+    TRISBbits.TRISB7=0;
+# 42 "prac1.c"
+    PSA=0;
+    T0CS=0;
+    PS0=0;
+    PS1=0;
+    PS2=0;
+    T0IF=0;
+    TMR0=0;
+# 248 "prac1.c"
+    CMCON=7;
+
+while(1)
+{
+
+    if(cont==40 || cont==81 || cont==122)
+    {
+            PORTBbits.RB5=0;
+            PORTBbits.RB6=0;
+            PORTBbits.RB7=0;
     }
-    return;
+
+
+
+
+    if(T0IF==1)
+
+        {
+            T0IF=0;
+            cont=cont+1;
+        }
+
+    if(cont==123)
+
+        {
+        cont=0;
+        }
+
+
+
+
+
+    if (cont>=0 && cont<40)
+
+       {
+
+
+            PORTAbits.RA2=0;
+
+            PORTAbits.RA0=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA0=1;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA0=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+
+            PORTAbits.RA2=1;
+
+            PORTBbits.RB5=1;
+            PORTBbits.RB6=0;
+            PORTBbits.RB7=0;
+
+
+        }
+
+
+
+
+
+
+
+    if (cont>=41 && cont<81)
+
+        {
+
+
+            PORTAbits.RA2=0;
+
+            PORTAbits.RA0=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA0=1;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+
+            PORTAbits.RA2=1;
+
+            PORTBbits.RB5=0;
+            PORTBbits.RB6=1;
+            PORTBbits.RB7=0;
+        }
+
+
+
+
+    if (cont>=82 && cont<122)
+
+        {
+
+
+            PORTAbits.RA2=0;
+
+            PORTAbits.RA0=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA0=1;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+            PORTAbits.RA1=1;
+            PORTAbits.RA1=0;
+
+            PORTAbits.RA2=1;
+
+            PORTBbits.RB5=0;
+            PORTBbits.RB6=0;
+            PORTBbits.RB7=1;
+        }
+
+}
+
+
 }

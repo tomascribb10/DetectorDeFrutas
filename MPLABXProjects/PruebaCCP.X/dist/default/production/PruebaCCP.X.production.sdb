@@ -1,0 +1,322 @@
+[p GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 0 ]
+"505 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"56 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"44 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"3 C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"11
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"20
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+"26
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+"63
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+"88
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+"104
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+"25 C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"61
+[v _INT_CCP1 INT_CCP1 `II(v  1 e 1 0 ]
+[s S232 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f628a.h
+[u S241 . 1 `S232 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES241  1 e 1 @6 ]
+[s S43 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"334
+[s S52 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S57 . 1 `S43 1 . 1 0 `S52 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES57  1 e 1 @11 ]
+[s S96 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"406
+[u S105 . 1 `S96 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES105  1 e 1 @12 ]
+"453
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"460
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"467
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+[s S121 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"486
+[s S127 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[u S131 . 1 `S121 1 . 1 0 `S127 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES131  1 e 1 @16 ]
+"611
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"618
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @22 ]
+"625
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+[s S22 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"987
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES31  1 e 1 @134 ]
+[s S75 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 EEIE 1 0 :1:7 
+]
+"1049
+[u S84 . 1 `S75 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES84  1 e 1 @140 ]
+"358 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"19 C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+[v _valor_pasos valor_pasos `ui  1 e 2 0 ]
+"20
+[v _frecuencia frecuencia `ui  1 e 2 0 ]
+"21
+[v _in in `ui  1 e 2 0 ]
+"22
+[v _periodo periodo `f  1 e 3 0 ]
+"23
+[v _buffer buffer `[20]uc  1 e 20 0 ]
+"25
+[v _main main `(v  1 e 1 0 ]
+{
+"59
+} 0
+"505 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 12 ]
+"512
+[v sprintf@c c `uc  1 a 1 16 ]
+"521
+[v sprintf@prec prec `c  1 a 1 14 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 11 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 10 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 4 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 15 ]
+"1567
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 11 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 7 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 9 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 4 ]
+"30
+} 0
+"28 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 0 ]
+"31
+} 0
+"44 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 25 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 29 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 24 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 16 ]
+"73
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 14 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 18 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 17 ]
+[v ___ftmul@exp exp `uc  1 a 1 13 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 3 ]
+[v ___ftmul@f2 f2 `f  1 p 3 6 ]
+"157
+} 0
+"56 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 11 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 15 ]
+[v ___ftdiv@exp exp `uc  1 a 1 14 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 10 ]
+"56
+[v ___ftdiv@f2 f2 `f  1 p 3 0 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 3 ]
+"86
+} 0
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 2 ]
+[v ___ftpack@exp exp `uc  1 p 1 5 ]
+[v ___ftpack@sign sign `uc  1 p 1 6 ]
+"86
+} 0
+"104 C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\lcd.c
+[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
+{
+[v Lcd_Write_String@a a `*.4DCuc  1 a 1 wreg ]
+"106
+[v Lcd_Write_String@i i `i  1 a 2 8 ]
+"104
+[v Lcd_Write_String@a a `*.4DCuc  1 a 1 wreg ]
+"107
+[v Lcd_Write_String@a a `*.4DCuc  1 a 1 10 ]
+"109
+} 0
+"88
+[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
+{
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"90
+[v Lcd_Write_Char@y y `uc  1 a 1 5 ]
+[v Lcd_Write_Char@temp temp `uc  1 a 1 4 ]
+"88
+[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
+"91
+[v Lcd_Write_Char@a a `uc  1 a 1 6 ]
+"102
+} 0
+"26
+[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
+{
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+"28
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 3 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 2 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 1 ]
+"26
+[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 6 ]
+"29
+[v Lcd_Set_Cursor@a a `uc  1 a 1 0 ]
+"61
+} 0
+"63
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"86
+} 0
+"20
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"24
+} 0
+"11
+[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+{
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
+"13
+[v Lcd_Cmd@a a `uc  1 a 1 5 ]
+"18
+} 0
+"3
+[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+{
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+[v Lcd_Port@a a `uc  1 a 1 wreg ]
+"5
+[v Lcd_Port@a a `uc  1 a 1 2 ]
+"9
+} 0
+"61 C:\SanJose\DetectorDeFrutas\MPLABXProjects\PruebaCCP.X\main.c
+[v _INT_CCP1 INT_CCP1 `II(v  1 e 1 0 ]
+{
+"73
+} 0

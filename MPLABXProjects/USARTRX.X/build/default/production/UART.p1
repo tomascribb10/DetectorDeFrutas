@@ -228,162 +228,162 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;UART.c: 36:     RCSTAbits.OERR = 0;
 [e = . . _RCSTAbits 0 1 -> -> 0 `i `uc ]
-"39
-[; ;UART.c: 39:     TRISBbits.TRISB1 = 1;
+"42
+[; ;UART.c: 42:     TRISBbits.TRISB1 = 1;
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"40
-[; ;UART.c: 40:     TRISBbits.TRISB2 = 1;
+"43
+[; ;UART.c: 43:     TRISBbits.TRISB2 = 1;
 [e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-"41
-[; ;UART.c: 41: }
+"44
+[; ;UART.c: 44: }
 [e :UE 51 ]
 }
-"47
-[; ;UART.c: 47: void UARTSendChar(const char c) {
+"50
+[; ;UART.c: 50: void UARTSendChar(const char c) {
 [v _UARTSendChar `(v ~T0 @X0 1 ef1`Cuc ]
 {
 [e :U _UARTSendChar ]
 [v _c `Cuc ~T0 @X0 1 r1 ]
 [f ]
-"48
-[; ;UART.c: 48:     while (TXSTAbits.TRMT == 0);
+"51
+[; ;UART.c: 51:     while (TXSTAbits.TRMT == 0);
 [e $U 55  ]
 [e :U 56 ]
 [e :U 55 ]
 [e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 56  ]
 [e :U 57 ]
-"49
-[; ;UART.c: 49:     TXREG = c;
+"52
+[; ;UART.c: 52:     TXREG = c;
 [e = _TXREG -> _c `uc ]
-"50
-[; ;UART.c: 50: }
+"53
+[; ;UART.c: 53: }
 [e :UE 54 ]
 }
-"57
-[; ;UART.c: 57: void UARTSendString(const char* str, const uint8_t max_length) {
+"60
+[; ;UART.c: 60: void UARTSendString(const char* str, const uint8_t max_length) {
 [v _UARTSendString `(v ~T0 @X0 1 ef2`*Cuc`Cuc ]
 {
 [e :U _UARTSendString ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [v _max_length `Cuc ~T0 @X0 1 r2 ]
 [f ]
-"58
-[; ;UART.c: 58:     int i = 0;
+"61
+[; ;UART.c: 61:     int i = 0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"59
-[; ;UART.c: 59:     for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
+"62
+[; ;UART.c: 62:     for (i=0 ; i<max_length && str[i]!='\0' ; i++) {
 {
 [e = _i -> 0 `i ]
 [e $U 62  ]
 [e :U 59 ]
 {
-"60
-[; ;UART.c: 60:         UARTSendChar(str[i]);
+"63
+[; ;UART.c: 63:         UARTSendChar(str[i]);
 [e ( _UARTSendChar (1 *U + _str * -> _i `x -> -> # *U _str `i `x ]
-"61
-[; ;UART.c: 61:     }
+"64
+[; ;UART.c: 64:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 62 ]
 [e $ && < _i -> _max_length `i != -> *U + _str * -> _i `x -> -> # *U _str `i `x `ui -> 0 `ui 59  ]
 [e :U 60 ]
 }
-"62
-[; ;UART.c: 62: }
+"65
+[; ;UART.c: 65: }
 [e :UE 58 ]
 }
-"68
-[; ;UART.c: 68: short UARTDataReady(void) {
+"71
+[; ;UART.c: 71: short UARTDataReady(void) {
 [v _UARTDataReady `(s ~T0 @X0 1 ef ]
 {
 [e :U _UARTDataReady ]
 [f ]
-"69
-[; ;UART.c: 69:     return PIR1bits.RCIF ? 1 : 0;
+"72
+[; ;UART.c: 72:     return PIR1bits.RCIF ? 1 : 0;
 [e ) -> ? != -> . . _PIR1bits 0 5 `i -> 0 `i : -> 1 `i -> 0 `i `s ]
 [e $UE 63  ]
-"70
-[; ;UART.c: 70: }
+"73
+[; ;UART.c: 73: }
 [e :UE 63 ]
 }
-"76
-[; ;UART.c: 76: char UARTReadChar() {
+"79
+[; ;UART.c: 79: char UARTReadChar() {
 [v _UARTReadChar `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UARTReadChar ]
 [f ]
-"77
-[; ;UART.c: 77:     while (!UARTDataReady());
+"80
+[; ;UART.c: 80:     while (!UARTDataReady());
 [e $U 65  ]
 [e :U 66 ]
 [e :U 65 ]
 [e $ ! != -> ( _UARTDataReady ..  `i -> 0 `i 66  ]
 [e :U 67 ]
-"78
-[; ;UART.c: 78:     return RCREG;
+"81
+[; ;UART.c: 81:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 64  ]
-"79
-[; ;UART.c: 79: }
+"82
+[; ;UART.c: 82: }
 [e :UE 64 ]
 }
-"88
-[; ;UART.c: 88: uint8_t UARTReadString(char *buf, uint8_t max_length) {
+"91
+[; ;UART.c: 91: uint8_t UARTReadString(char *buf, uint8_t max_length) {
 [v _UARTReadString `(uc ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _UARTReadString ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [v _max_length `uc ~T0 @X0 1 r2 ]
 [f ]
-"89
-[; ;UART.c: 89:     uint8_t i = 0;
+"92
+[; ;UART.c: 92:     uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"90
-[; ;UART.c: 90:     char tmp = 1;
+"93
+[; ;UART.c: 93:     char tmp = 1;
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp -> -> 1 `i `uc ]
-"91
-[; ;UART.c: 91:     for (i=0 ; i<max_length-1 ; i++) {
+"94
+[; ;UART.c: 94:     for (i=0 ; i<max_length-1 ; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 72  ]
 [e :U 69 ]
 {
-"92
-[; ;UART.c: 92:         tmp = UARTReadChar();
+"95
+[; ;UART.c: 95:         tmp = UARTReadChar();
 [e = _tmp ( _UARTReadChar ..  ]
-"94
-[; ;UART.c: 94:         if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
+"97
+[; ;UART.c: 97:         if (tmp == '\0' || tmp == '\n' || tmp == '\r') {
 [e $ ! || || == -> _tmp `ui -> 0 `ui == -> _tmp `ui -> 10 `ui == -> _tmp `ui -> 13 `ui 73  ]
 {
-"95
-[; ;UART.c: 95:             break;
+"98
+[; ;UART.c: 98:             break;
 [e $U 70  ]
-"96
-[; ;UART.c: 96:         }
+"99
+[; ;UART.c: 99:         }
 }
 [e :U 73 ]
-"97
-[; ;UART.c: 97:         buf[i] = tmp;
+"100
+[; ;UART.c: 100:         buf[i] = tmp;
 [e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _tmp ]
-"98
-[; ;UART.c: 98:     }
+"101
+[; ;UART.c: 101:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 72 ]
 [e $ < -> _i `i - -> _max_length `i -> 1 `i 69  ]
 [e :U 70 ]
 }
-"100
-[; ;UART.c: 100:     buf[i+1] = '\0';
+"103
+[; ;UART.c: 103:     buf[i+1] = '\0';
 [e = *U + _buf * -> + -> _i `i -> 1 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"102
-[; ;UART.c: 102:     return i;
+"105
+[; ;UART.c: 105:     return i;
 [e ) _i ]
 [e $UE 68  ]
-"103
-[; ;UART.c: 103: }
+"106
+[; ;UART.c: 106: }
 [e :UE 68 ]
 }
